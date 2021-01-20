@@ -11,19 +11,20 @@ This project is to display a functional application that will demonstrate CRUD f
 - Handlebars (? for management of neavigation and format?)
 - MySQL
 - Express
+- Sequelize
 - Node.js
 - Heroku
 
-# TO-DO (Updated Jan 16)
+# TO-DO (Updated Jan 19)
 
-## Topics [DEADLINE TUESDAY]:
+## Topics:
 
-- Music, Food, Games, Travels,
-- Have it correspond to user needs/story (Why we are passionate about chosen topic)
+- Ghosts & Supernatural
 
 ## Front-end Rendering, HTML Skeleton, (Handlebars)
 
 - Soumya
+- Kieran
 
 ## Javascript
 
@@ -35,7 +36,7 @@ This project is to display a functional application that will demonstrate CRUD f
 
 - Jacky
 
-## Database connection
+## Database connection/Structure Schema
 
 - Jacky
 
@@ -56,7 +57,7 @@ Incorporate later, APIs?
 
 - / (for the main splash and banner)
 - /wiki/:article_title (For actual articles, req.params.:article_title)
-- /wiki/:category (Tag cloud for articles, ex. the one titled "Samosa" is tagged Burmese, Spicy, Gluten-Free, Savory)
+- /wiki/:category (Tag cloud for articles, ex. a good one titled "Samosa" is tagged Burmese, Spicy, Gluten-Free, Savory)
 
 ### Wiki Functionality:
 
