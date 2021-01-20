@@ -28,7 +28,8 @@ CREATE TABLE comments (
   user_id INTEGER NOT NULL,
   user_name VARCHAR(64) DEFAULT "Anonymous",
   comment TEXT,
-  PRIMARY KEY(id)
+  PRIMARY KEY(id),
+  FOREIGN KEY(user_id) REFERENCES user(id)
 );
 
 -- User Data Section --
