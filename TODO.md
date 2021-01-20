@@ -11,6 +11,7 @@ This project is to display a functional application that will demonstrate CRUD f
 - Handlebars (? for management of neavigation and format?)
 - MySQL
 - Express
+- Sequelize
 - Node.js
 - Heroku
 
