@@ -15,11 +15,15 @@ This project is to display a functional application that will demonstrate CRUD f
 - Node.js
 - Heroku
 
-# TO-DO (Updated Jan 19)
+# TO-DO (Updated Jan 19, need progress by Thursday)
 
-## Topics:
+## Topic & Current Tasks:
 
 - Ghosts & Supernatural
+- Sequelize: Edgar
+- Database structuring: Jacky
+- Front-end HTML etc.: Soumya
+- Look up secondary technologies, APIs, NPM packages to incorporate in this project: All
 
 ## Front-end Rendering, HTML Skeleton, (Handlebars)
 
