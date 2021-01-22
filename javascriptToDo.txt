@@ -3,6 +3,8 @@
 - set up server (in progress)
     -> set up routes
 
+- set up sequelize
+
 - set up routes javascript
     -api connection
     -and stuff 
