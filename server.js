@@ -3,6 +3,7 @@ const express = require('express');
 const expHB = require('express-handlebars');
 const mysql = require('mysql')
 const articles = require("./app/models/articles")
+const sequelize = require("./app/config/connection")
 
 // setting up port
 const PORT = process.env.PORT || 8080;
@@ -21,7 +22,7 @@ app.set('view engine', 'handlebars')
 app.use(express.static("app/public"))
 
 //Routes
-// require("./app/routes/api-routes.js")(app);
+require("./app/routes/api-routes.js")(app);
 // require("./app/routes/html-routes.js")(app);
 
 
@@ -49,6 +50,6 @@ app.use(express.static("app/public"))
 
 // app.listen(PORT, () => console.log(`Listening at port http://localhost:${PORT} `))
 
-articles.sequelize.sync().then(() => {
+sequelize.sync().then(() => {
     app.listen(PORT, () => console.log(`Listening at port http://localhost:${PORT} `))
 });
