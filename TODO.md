@@ -15,7 +15,7 @@ This project is to display a functional application that will demonstrate CRUD f
 - Node.js
 - Heroku
 
-# TO-DO (Updated Jan 19, need progress by Thursday)
+# TO-DO (Updated Jan 23
 
 ## Topic & Current Tasks:
 
