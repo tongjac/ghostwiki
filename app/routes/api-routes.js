@@ -15,6 +15,13 @@ module.exports = (app) => {
         db.users.findAll({}).then((dbUsers) => res.send(dbUsers))
     });
 
+    app.post("/api/comments", (req, res) => {
+        console.log(req.body)
+        db.comments.create({
+            comment: req.body.comment
+        }).then((dbComs) => res.send(dbComs));
+    })
+
     
 
 
