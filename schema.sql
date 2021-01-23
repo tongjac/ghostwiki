@@ -15,6 +15,18 @@ CREATE TABLE articles (
   PRIMARY KEY(id)
 );
 
+-- User Data Section --
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (
+  id INTEGER AUTO_INCREMENT NOT NULL,
+  user_name VARCHAR(64) NOT NULL,
+  user_icon TEXT,
+  email VARCHAR(64) NOT NULL,
+  password VARCHAR(64) NOT NULL,
+  contribution INT,
+  PRIMARY KEY(id)
+);
+
 -- Comment section--
 DROP TABLE IF EXISTS comments;
 CREATE TABLE comments (
@@ -24,19 +36,7 @@ CREATE TABLE comments (
   user_name VARCHAR(64) DEFAULT "Anonymous",
   comment TEXT,
   PRIMARY KEY(id),
-  FOREIGN KEY(user_id) REFERENCES user(id)
-);
-
--- User Data Section --
-DROP TABLE IF EXISTS user;
-CREATE TABLE user (
-  id INTEGER AUTO_INCREMENT NOT NULL,
-  user_name VARCHAR(64) NOT NULL,
-  user_icon TEXT,
-  email VARCHAR(64) NOT NULL,
-  password VARCHAR(64) NOT NULL,
-  contribution INT,
-  PRIMARY KEY(id)
+  FOREIGN KEY(user_id) REFERENCES users(id)
 );
 
 -- Seed Article Data --
@@ -61,14 +61,20 @@ VALUES ("Slenderman", "2021-01-04", "Creature", "Slenderman is depicted as a thi
 INSERT INTO articles (title, date_revised, category, content, habitat)
 VALUES ("La Llorona", "2021-01-20", "Ghost", "The Weeping Woman, or the Wailer roams waterfront areas mourning her drowned children. It is said one day, Maria sees her husband with another woman and in a fit of blind rage she drowns their children in a river, which she immediately regrets. Unable to save them and consumed by guilt, she drowns herself as well, but is unable to enter the afterlife without her children.", "Waterfronts, Latin America");
 
-SELECT * FROM articles;
+SELECT * FROM comments;
 
 -- Seed User Data --
-INSERT INTO user (user_name, email, password) 
+INSERT INTO users (user_name, email, password) 
 VALUES ("Fred", "Fred@mail.com", "123456789");
 
-INSERT INTO user (user_name, email, password) 
+INSERT INTO users (user_name, email, password) 
 VALUES ("BballGurl92", "bballgurl92@mail.com", "123456789");
 
-INSERT INTO user (user_name, email, password) 
+INSERT INTO users (user_name, email, password) 
 VALUES ("GhostHunterx3", "GhostHunterx3@mail.com", "123456789");
+
+SELECT * FROM users;
+
+-- Seed Comment Data --
+INSERT INTO comments (date_posted, user_id, user_name, comment)
+VALUES ("2020-01-21", "1", "Fred", "This is a comment I am a test");
