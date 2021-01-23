@@ -4,7 +4,7 @@ const db = require("../models");
 //routes
 module.exports = (app) => {
   app.get("/api/articles", (req, res) => {
-    db.articles.findAll({}).then((dbArticles) => res.send(dbArticles));
+    db.articles.findAll({}).then((dbArticles) => res.json(dbArticles));
   });
 
   // Route for the URL with the article title, SQL/Sequelize search
@@ -22,11 +22,11 @@ module.exports = (app) => {
   });
 
   app.get("/api/comments", (req, res) => {
-    db.comments.findAll({}).then((dbComs) => res.send(dbComs));
+    db.comments.findAll({}).then((dbComs) => res.json(dbComs));
   });
 
   app.get("/api/users", (req, res) => {
-    db.users.findAll({}).then((dbUsers) => res.send(dbUsers));
+    db.users.findAll({}).then((dbUsers) => res.json(dbUsers));
   });
 
   app.post("/api/comments", (req, res) => {
