@@ -4,7 +4,7 @@ const { response } = require("express");
 document.addEventListener("DOMContentLoaded", (e) => {
     console.log("DOM Loaded");
 
-    const cmtsContainer = document.getElementById("");
+    const cmtsContainer = document.getElementById("cmtsContainer");
     const cmtsForm = document.getElementById("cmtForm");
 
     //init comment array
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
     //*******Make a createNewRow Function */
 
-      // Function to actually put the todo on the page
+      // Function to actually put the comment on the page
     const insertCmts = (e) => {
         e.preventDefault();
         const comments = {
@@ -92,4 +92,4 @@ document.addEventListener("DOMContentLoaded", (e) => {
             }   
   };
   cmtsForm.addEventListener('submit', insertCmts);
-
+});
