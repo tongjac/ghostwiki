@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
       // Function to actually put the comment on the page
     const insertCmts = () => {
-        console.log("comment posted")
+        console.log("insertCmts function running")
         
         const comments = {
         text: document.getElementById("newCmt").value.trim(),
@@ -89,6 +89,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
             .then((response) => response.json())
             .then(() => getCmts());
             }   
+        console.log("The end of insertCmts")
   };
   cmtsForm.addEventListener('submit', (e) => {
     e.preventDefault();
