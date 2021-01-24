@@ -21,11 +21,11 @@ module.exports = (app) => {
     }
   });
 
-  app.get("api/commentsGet", (req, res) => {
+  app.get("/api/commentsGet", (req, res) => {
     db.comments.findAll({}).then((dbComs) => res.send(json(dbComs)));
   });
 
-  app.get("api/users", (req, res) => {
+  app.get("/api/users", (req, res) => {
     db.users.findAll({}).then((dbUsers) => res.json(dbUsers));
   });
 
