@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     console.log("DOM Loaded");
 
     const cmtsContainer = document.getElementById("cmtsContainer");
-    const cmtsForm = document.getElementById("cmtForm");
+    const cmtsForm = document.getElementById("cmtsForm");
 
     //init comment array
     let comments = [];
