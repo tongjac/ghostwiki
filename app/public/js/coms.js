@@ -1,5 +1,3 @@
-const { response } = require("express");
-
 //waiting for DOM content to be loaded before running JS
 document.addEventListener("DOMContentLoaded", (e) => {
     console.log("DOM Loaded");
