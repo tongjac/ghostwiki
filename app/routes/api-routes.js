@@ -21,8 +21,8 @@ module.exports = (app) => {
     }
   });
 
-  app.get("api/comments", (req, res) => {
-    db.comments.findAll({}).then((dbComs) => res.json(dbComs));
+  app.get("api/commentsGet", (req, res) => {
+    db.comments.findAll({}).then((dbComs) => res.send(json(dbComs)));
   });
 
   app.get("api/users", (req, res) => {
