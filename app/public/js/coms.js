@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
     //helper function to get comments
     const getCmts = () => {
-        fetch("api/comments", {
+        fetch("/api/comments", {
             method: "GET",
             headers: {
                 "content-type": "application/json"
@@ -72,8 +72,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
     //*******Make a createNewRow Function */
 
       // Function to actually put the comment on the page
-    const insertCmts = (e) => {
-        e.preventDefault();
+    const insertCmts = () => {
+        console.log("comment posted")
+        
         const comments = {
         text: document.getElementById("newCmt").value.trim(),
         };
@@ -89,6 +90,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
             .then(() => getCmts());
             }   
   };
-  cmtsForm.addEventListener('submit', insertCmts);
+  cmtsForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+      insertCmts();
+    });
 });
 
