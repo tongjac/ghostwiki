@@ -33,7 +33,7 @@ CREATE TABLE comments (
   id INTEGER AUTO_INCREMENT NOT NULL,
   date_posted DATE NOT NULL,
   user_id INTEGER NOT NULL,
-  user_name VARCHAR(64) DEFAULT "Anonymous",
+ -- user_name VARCHAR(64) DEFAULT "Anonymous",--
   comment TEXT,
   PRIMARY KEY(id),
   FOREIGN KEY(user_id) REFERENCES users(id)
@@ -61,7 +61,7 @@ VALUES ("Slenderman", "2021-01-04", "Creature", "Slenderman is depicted as a thi
 INSERT INTO articles (title, date_revised, category, content, habitat)
 VALUES ("La Llorona", "2021-01-20", "Ghost", "The Weeping Woman, or the Wailer roams waterfront areas mourning her drowned children. It is said one day, Maria sees her husband with another woman and in a fit of blind rage she drowns their children in a river, which she immediately regrets. Unable to save them and consumed by guilt, she drowns herself as well, but is unable to enter the afterlife without her children.", "Waterfronts, Latin America");
 
-SELECT * FROM comments;
+SELECT * FROM articles;
 
 -- Seed User Data --
 INSERT INTO users (user_name, email, password) 
@@ -76,5 +76,18 @@ VALUES ("GhostHunterx3", "GhostHunterx3@mail.com", "123456789");
 SELECT * FROM users;
 
 -- Seed Comment Data --
-INSERT INTO comments (date_posted, user_id, user_name, comment)
-VALUES ("2020-01-21", "1", "Fred", "This is a comment I am a test");
+INSERT INTO comments (date_posted, user_id, comment)
+VALUES ("2020-01-21", "1", "This is a comment I am a test. Wow ghosts are cool.");
+
+INSERT INTO comments (date_posted, user_id, comment)
+VALUES ("2020-01-21", "2", "Hi Fred my name is BballGurl, I think ghosts are cool too.");
+
+SELECT * FROM comments;
+SELECT * FROM users WHERE (id = "1");
+
+-- Setting Fred's User Icon to kitten placeholder--
+UPDATE users
+SET user_icon = "https://placekitten.com/200/200"
+WHERE id = "1";
+
+SELECT * FROM users WHERE id = "1";
