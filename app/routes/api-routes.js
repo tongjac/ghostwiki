@@ -21,20 +21,20 @@ module.exports = (app) => {
     }
   });
 
-  app.get("/api/comments", (req, res) => {
+  app.get("api/comments", (req, res) => {
     db.comments.findAll({}).then((dbComs) => res.json(dbComs));
   });
 
-  app.get("/api/users", (req, res) => {
+  app.get("api/users", (req, res) => {
     db.users.findAll({}).then((dbUsers) => res.json(dbUsers));
   });
 
-  app.post("/api/comments", (req, res) => {
-    console.log(req.body);
-    db.comments
-      .create({
-        comment: req.body.comment,
-      })
-      .then((dbComs) => res.send(dbComs));
-  });
+  // app.post("/api/comments", (req, res) => {
+  //   console.log(req.body);
+  //   db.comments
+  //     .create({
+  //       comment: req.body.comment,
+  //     })
+  //     .then((dbComs) => res.send(dbComs));
+  // });
 };
