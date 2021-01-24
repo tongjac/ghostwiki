@@ -24,12 +24,22 @@ body {
   padding: 20px;
 }
 
+.left2 {
+  flex: 15%;
+  padding: 20px;
+}
+
 .left h2 {
   padding-left: 8px;
 }
 
 /* Right column (page content) */
 .right {
+  flex: 55%;
+  padding: 15px;
+}
+
+.right2 {
   flex: 55%;
   padding: 15px;
 }
@@ -46,14 +56,14 @@ body {
   padding: 15px;
 }
 
-.whiteband {
-  float: left;
-  flex: 100%;
+.secondapi2 {
+  float: right;
+  flex: 30%;
   padding: 15px;
 }
 
 .bottombar {
-  float:none;
+  float: none;
   flex: 30%;
   padding: 15px;
 }
