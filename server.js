@@ -11,10 +11,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Static directory
-app.use(express.static('public'));
+app.use(express.static('./app/public'));
 
 //routes
-require("./app/routes/api-routes")
+require("./app/routes/api-routes")(app);
 
 
 db.sequelize.sync().then(() => 

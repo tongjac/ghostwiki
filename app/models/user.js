@@ -1,4 +1,4 @@
-//allows use of comments in other files.
+//allows use of the user model in other files.
 module.exports = (sequelize, DataTypes) => {
     const user = sequelize.define('user', 
     {
