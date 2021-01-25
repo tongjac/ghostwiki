@@ -27,17 +27,7 @@ CREATE TABLE users (
   PRIMARY KEY(id)
 );
 
--- Comment section--
-DROP TABLE IF EXISTS comments;
-CREATE TABLE comments (
-  id INTEGER AUTO_INCREMENT NOT NULL,
-  date_posted DATE NOT NULL,
-  user_id INTEGER NOT NULL,
- -- user_name VARCHAR(64) DEFAULT "Anonymous",--
-  comment TEXT,
-  PRIMARY KEY(id),
-  FOREIGN KEY(user_id) REFERENCES users(id)
-);
+
 
 -- Seed Article Data --
 INSERT INTO articles (title, date_revised, category, content, habitat) 
@@ -76,13 +66,6 @@ VALUES ("GhostHunterx3", "GhostHunterx3@mail.com", "123456789");
 SELECT * FROM users;
 
 -- Seed Comment Data --
-INSERT INTO comments (date_posted, user_id, comment)
-VALUES ("2020-01-21", "1", "This is a comment I am a test. Wow ghosts are cool.");
-
-INSERT INTO comments (date_posted, user_id, comment)
-VALUES ("2020-01-21", "2", "Hi Fred my name is BballGurl, I think ghosts are cool too.");
-
-SELECT * FROM comments;
 SELECT * FROM users WHERE (id = "1");
 
 -- Setting Fred's User Icon to kitten placeholder--

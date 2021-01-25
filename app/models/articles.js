@@ -1,3 +1,5 @@
+// WORK ON THE DATE STUFF
+
 //Makes articles model available to other files. Also creates articles table.
 module.exports = (sequelize, DataTypes) => {
   const articles = sequelize.define(
@@ -9,7 +11,11 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
       },
       title: DataTypes.STRING,
-      date_revised: DataTypes.DATE,
+      // ADDED TEMPORARY DEFAULT VALUE
+      date_revised:{
+        type: DataTypes.DATE,
+        defaultValue: 1
+      },
       content: DataTypes.TEXT,
       tags: DataTypes.STRING,
     },

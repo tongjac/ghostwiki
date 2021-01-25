@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     //This function resets comments with the comments 
     //that have been stored in the database
     const initCmts = () => {
-        cmtsContainer.innerHTML = '';
+        // cmtsContainer.innerHTML = '';
         const cmtsToAdd = [];
 
         for (let i = 0; i < comments.length; i++) {
@@ -43,6 +43,24 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
     getCmts();
 
+    // const submitCom = (post) => {
+    //     fetch('/api/posts', {
+    //       method: 'POST',
+    //       headers: {
+    //         'Content-Type': 'application/json',
+    //       },
+    //       body: JSON.stringify(post),
+    //     })
+    //       .then((response) => response.json())
+    //       .then((data) => {
+    //         console.log('Success in submitting post:', data);
+    //         window.location.href = '/blog';
+    //       })
+    //       .catch((error) => {
+    //         console.error('Error:', error);
+    //       });
+    //   };
+
     // Helper function to delete a comment
     // const deleteCmts = (e) => {
     //     e.stopPropagation();
@@ -72,27 +90,28 @@ document.addEventListener("DOMContentLoaded", (e) => {
     //*******Make a createNewRow Function */
 
       // Function to actually put the comment on the page
-    const insertCmts = () => {
-        console.log("comment posted")
+//     const insertCmts = () => {
+//         console.log("insertCmts function running")
         
-        const comments = {
-        text: document.getElementById("newCmt").value.trim(),
-        };
-        if (comments.text) {
-            fetch('/api/comments', {
-                method: 'POST',
-                headers: {
-                'Content-Type': 'application/json',
-            },
-        body: JSON.stringify(comments),
-            })
-            .then((response) => response.json())
-            .then(() => getCmts());
-            }   
-  };
-  cmtsForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-      insertCmts();
-    });
+//         const comments = {
+//         text: document.getElementById("newCmt").value.trim(),
+//         };
+//         if (comments.text) {
+//             fetch('/api/comments', {
+//                 method: 'POST',
+//                 headers: {
+//                 'Content-Type': 'application/json',
+//             },
+//         body: JSON.stringify(comments),
+//             })
+//             .then((response) => response.json())
+//             .then(() => getCmts());
+//             }   
+//         console.log("The end of insertCmts")
+//   };
+//   cmtsForm.addEventListener('submit', (e) => {
+//     e.preventDefault();
+//       insertCmts();
+//     });
 });
 
