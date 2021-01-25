@@ -1,26 +1,14 @@
 //Dependencies
 const db = require("../models");
 
+
+// THIS NEEDS A WAY TO ADD USERNAME ETC************
+
+
+
+
 //routes
 module.exports = (app) => {
-  // console.log('api-routes.js is running')
-  // app.get("/api/articles", (req, res) => {
-  //   db.articles.findAll({}).then((dbArticles) => res.json(dbArticles));
-  // });
-
-  // // Route for the URL with the article title, SQL/Sequelize search
-  // app.get("/api/:articles?", (req, res) => {
-  //   // If the user provides a specific article title in the URL, then pull the article.
-  //   if (req.params.characters) {
-  //     db.articles
-  //       .findEach({
-  //         where: {
-  //           title: req.params.articles,
-  //         },
-  //       })
-  //       .then((dbArticles) => res.send(dbArticles));
-  //   }
-  // });
 
   app.get("/api/comments", (req, res) => {
  
@@ -32,20 +20,25 @@ module.exports = (app) => {
     console.log(req.body)
     db.comments.create({
       comment: req.body.comment
-      
-    }).then((comPost) => res.json(comPost))
+
+    }).then((dbComs) => res.json(dbComs))
   })
 
-  // app.get("/api/users", (req, res) => {
-  //   db.users.findAll({}).then((dbUsers) => res.json(dbUsers));
-  // });
+  app.delete("/api/comments/:id", (req, res) => {
+    db.comments.destroy({
+      where: {
+        id: req.params.id,
+      },
+    }).then((dbComs) => res.json(dbComs));
+  });
 
-  // app.post("/api/comments", (req, res) => {
-  //   console.log(req.body);
-  //   db.comments
-  //     .create({
-  //       comment: req.body.comment,
-  //     })
-  //     .then((dbComs) => res.send(dbComs));
-  // });
+  //We might, probably will,  need to mdify this later
+  app.put('/api/comments', (req, res) => {
+    db.comments.update(req.body, {
+      where: {
+        comment: req.body.comment
+      },
+    }).then((dbComs) => res.json(dbComs));
+  });
+
 };
