@@ -1,4 +1,5 @@
-const { DATE } = require("sequelize/types");
+
+// FIGURE OUT HOW TO DO FOREIGN KEYS
 
 //allows use of the comments model in other files.
 module.exports = (sequelize, DataTypes) => {
@@ -13,16 +14,22 @@ module.exports = (sequelize, DataTypes) => {
       created_at: {
         field: "created_at",
         type: DataTypes.DATE,
-        defaultValue: DATE
       },
       updated_at: {
         field: "updated_at",
         type: DataTypes.DATE,
-        defaultValue: DATE
       },
-      user_id: DataTypes.INTEGER,
-      user_name: DataTypes.STRING,
-      comment: DataTypes.STRING,
+      user_id:{
+        type: DataTypes.INTEGER,
+        defaultValue: 1
+      } ,
+      user_name: {
+        type: DataTypes.STRING,
+        defaultValue: "3rd_eye_llama"
+      },
+      comment: {
+        type: DataTypes.STRING
+      },
     },
     {
       // Disable the modification of tablenames; By default, sequelize will automatically
