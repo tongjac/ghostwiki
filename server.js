@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 const db = require("./app/models")
+const apiRoutes = require("./app/routes/api-routes.js");
 
 // setting up port
 const PORT = process.env.PORT || 8080;
@@ -14,7 +15,7 @@ app.use(express.json());
 app.use(express.static('./app/public'));
 
 //routes
-require("./app/routes/api-routes")(app);
+apiRoutes(app);
 
 
 db.sequelize.sync().then(() => 
