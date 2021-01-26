@@ -10,7 +10,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css"
     />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica&family=Texturina:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica&family=Texturina:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <link rel="shortcut icon" href="">
   </head>
@@ -29,6 +29,7 @@
         ALL THINGS OCCULT
       </span>
     </nav>
+    <!-- end of NavBar -->
 
     <!-- Dropdown Menu List -->
     <nav
@@ -44,7 +45,7 @@
           aria-controls="navbarNavDropdown"
           aria-expanded="false"
           aria-label="Toggle navigation"
-        >
+         >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -57,13 +58,13 @@
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
-              >
+               >
                 Dropdown Menu
               </a>
               <ul
                 class="dropdown-menu"
                 aria-labelledby="navbarDropdownMenuLink"
-              >
+               >
                 <li><a class="dropdown-item" href="#">Action</a></li>
                 <li><a class="dropdown-item" href="#">Another action</a></li>
                 <li>
@@ -75,6 +76,7 @@
         </div>
       </div>
     </nav>
+    <!-- end of dropdown menu -->
 
     <!-- Sidebar with search bar and other topics -->
     <div class="row">
@@ -82,26 +84,16 @@
         <h4>Menu</h4>
         <input
           type="text"
-          id="mySearch"
-          onkeyup="myFunction()"
+          id="SearchSection"
           placeholder="Search.."
           title="Type in a category"
         />
-        <ul id="myMenu">
-          <li><a href="#">HTML</a></li>
-          <li><a href="#">CSS</a></li>
-          <li><a href="#">JavaScript</a></li>
-          <li><a href="#">PHP</a></li>
-          <li><a href="#">Python</a></li>
-          <li><a href="#">jQuery</a></li>
-          <li><a href="#">SQL</a></li>
-          <li><a href="#">Bootstrap</a></li>
-          <li><a href="#">Node.js</a></li>
+        <ul id="articleTitles">
         </ul>
       </div>
 
       <!-- Page Content -->
-      <div class="right">
+      <div class="right" id= "articleContainer">
         <h3>Article Content</h3>
         <p>
           Start to type for a specific category inside the search bar to
@@ -151,16 +143,17 @@
           <div class="row d-flex justify-content-center">
             <div class="col-md-12">
               <div class="comment-section">
-                <!-- first comment box -->
+                
+                <!-- Comment Form -->
                 <div class="card p-3 border-blue mt-3">
                   <span class="dots"></span>
                     <div class="d-flex justify-content-between mt-2">
                       <div class="d-flex flex-row">
                         <div class="user-image">
                             <img
-                            src="https://i.imgur.com/rvQ3LAt.jpg"
-                            width="40"
-                            class="rounded-circle"
+                              src="https://i.imgur.com/rvQ3LAt.jpg"
+                              width="40"
+                              class="rounded-circle"
                             />
                         </div>
                         <div class="d-flex flex-column">
@@ -174,17 +167,19 @@
                     </p>
                       <form id= "cmtsForm">
                           <input
-                          class="form-control"
-                          placeholder="Write a comment..."
-                          id= "newCmt"
+                            class="form-control"
+                            placeholder="Write a comment..."
+                            id= "newCmt"
                           />
                           <div class="mt-2 d-flex justify-content-end">
-                          <button class="btn btn-primary btn-sm ms-1">
+                            <button class="btn btn-primary btn-sm ms-1">
                               Submit
-                          </button>
+                            </button>
                           </div>
                       </form>
                 </div>
+                <!-- end of comment form  -->
+                
                 <!--second comment box -->
                 <div class="card p-3 border-blue mt-3">
                     <span class="dots"></span>
@@ -197,28 +192,19 @@
                             class="rounded-circle"
                             />
                           </div>
-                        <div class="d-flex flex-column">
+
+                          <div class="d-flex flex-column">
                             <h6 class="mb-0">Martin Tyler</h6>
                             <span class="date">Nov 29, 2020 at 9:40</span>
+                          </div>
                         </div>
-                      </div>
                     </div>
+                    <!-- comment content -->
                     <p class="content">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                         ultricies, odio in interdum tristique, erat arcu vestibulum
                         leo, non condimentum eros risus quis tellus.
                     </p>
-                    <div class="form">
-                        <input
-                        class="form-control"
-                        placeholder="Write a comment..."
-                        />
-                        <div class="mt-2 d-flex justify-content-end">
-                        <button class="btn btn-primary btn-sm ms-1">
-                            Submit
-                        </button>
-                        </div>
-                    </div>
                 </div>
               </div>
             </div>
@@ -230,7 +216,7 @@
       <div class="secondapi2" style="background-color: #bbb"></div>
     </div>
   </div>
-
+  <script src="./js/articles.js"></script>
   <script src="./js/coms.js"></script>
   </body>
 </html>

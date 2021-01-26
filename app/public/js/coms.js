@@ -19,10 +19,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
             cmtsToAdd.push((comments[i]));
             
         }
-
-        //*******bring this back once we have the html section updated */
-        // cmtsToAdd.forEach((row) => cmtsContainer.append(row))
-
     }
 
     //helper function to get comments
