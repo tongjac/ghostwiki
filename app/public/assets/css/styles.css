@@ -1,8 +1,33 @@
 /* Left Side Bar (Menu) & Central Content Styling */
 
-.text {
-  font-size: xx-large;
-  font-weight: 900;
+.nav-header {
+  font-family: "IM Fell Double Pica", serif;
+  font-size: 32px;
+  letter-spacing: 5px;
+  padding-left: 50px;
+  color: #98d8e0;
+}
+
+.nav-header a:hover {
+  color: #385053;
+}
+
+.navbar-spooky {
+  background: rgb(18, 26, 31);
+  background: linear-gradient(
+    128deg,
+    rgba(18, 26, 31, 1) 0%,
+    rgba(49, 58, 62, 1) 100%
+  );
+}
+
+.nav-occult {
+  /* font-family: 'Texturina', serif; */
+  font-family: "IM Fell Double Pica", serif;
+  font-size: 12px;
+  letter-spacing: 10px;
+  padding-right: 50px;
+  color: #98d8e0;
 }
 
 body {
@@ -21,27 +46,33 @@ body {
 /* Left column (menu) */
 .left {
   flex: 15%;
-  padding: 20px;
+  padding-left: 30px;
+  padding-top: 20px;
+  background-color: rgba(18, 26, 31, 1);
 }
 
 .left2 {
   flex: 15%;
-  padding: 20px;
+  padding-left: 30px;
+  padding-top: 20px;
+  background-color: rgba(18, 26, 31, 1);
 }
 
-.left h2 {
+.left h4 {
   padding-left: 8px;
+  color: #98d8e0;
 }
 
 /* Right column (page content) */
 .right {
   flex: 55%;
-  padding: 15px;
+  padding: 25px;
+  background-color: #ddd;
 }
 
 .right2 {
   flex: 55%;
-  padding: 15px;
+  padding: 25px;
 }
 
 .exright {
@@ -70,7 +101,7 @@ body {
 
 /* Style the search box */
 #mySearch {
-  width: 100%;
+  width: 90%;
   font-size: 18px;
   padding: 11px;
   border: 1px solid #ddd;
@@ -84,14 +115,16 @@ body {
 }
 
 #myMenu li a {
-  padding: 12px;
+  width: 90%;
+  padding: 10px;
   text-decoration: none;
-  color: black;
+  color: #ddd;
   display: block;
 }
 
 #myMenu li a:hover {
-  background-color: #eee;
+  background-color: rgba(49, 58, 62, 1);
+  color: #ddd;
 }
 
 /* Styling Right Comment Section Begins */
@@ -107,7 +140,7 @@ body {
 }
 
 .border-blue {
-  border: 2px solid blue;
+  border: 2px solid #98d8e0;
 }
 
 .dots {
@@ -139,6 +172,5 @@ body {
 
 .content {
   font-size: 14px;
+  padding-top: 8px;
 }
-
-/* Styling Right Comment Section Ends */
