@@ -71,160 +71,198 @@
       </div>
     </nav>
 
-    <!-- Sidebar with search bar and other topics -->
-    <div class="row">
-      <div class="left" style="background-color: #bbb">
-        <h2>Menu</h2>
-        <input
-          type="text"
-          id="mySearch"
-          onkeyup="myFunction()"
-          placeholder="Search.."
-          title="Type in a category"
-        />
-        <ul id="myMenu">
-          <li><a href="#">HTML</a></li>
-          <li><a href="#">CSS</a></li>
-          <li><a href="#">JavaScript</a></li>
-          <li><a href="#">PHP</a></li>
-          <li><a href="#">Python</a></li>
-          <li><a href="#">jQuery</a></li>
-          <li><a href="#">SQL</a></li>
-          <li><a href="#">Bootstrap</a></li>
-          <li><a href="#">Node.js</a></li>
-        </ul>
-      </div>
+<!-- Sidebar with search bar and other topics -->
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="container-fluid">
+                  <div class="p-3 mb-2 text-dark">
+                      <div class="row">
 
-      <!-- Page Content -->
-      <div class="right" style="background-color: #ddd">
-        <h2>Page Content</h2>
-        <p>
-          Start to type for a specific category inside the search bar to
-          "filter" the search options.
-        </p>
-        <p>
-          Some text..Some text..Some text..Some text..Some text..Some text..Some
-          text..Some text..
-        </p>
-        <p>
-          Some other text..Some text..Some text..Some text..Some text..Some
-          text..Some text..Some text..
-        </p>
-        <p>Some text..</p>
-      </div>
-
-      <!-- Second API Column -->
-      <div class="secondapi" style="background-color: #bbb">
-        <h2>Page Content</h2>
-        <p>
-          Start to type for a specific category inside the search bar to
-          "filter" the search options.
-        </p>
-        <p>
-          Some text..Some text..Some text..Some text..Some text..Some text..Some
-          text..Some text..
-        </p>
-        <p>
-          Some other text..Some text..Some text..Some text..Some text..Some
-          text..Some text..Some text..
-        </p>
-        <p>Some text..</p>
-      </div>
-
-      <!-- end of strip 1 -->
-
-      <span class="whiteband"></span>
-
-
-          <!-- Sidebar Blank -->
-    <div class="left2" style="background-color: #bbb"></div>
-
-      <!-- Page Content -->
-      <div class="right2" style="background-color: #ddd">
-        <h2>Comments</h2>
-      <div class="container mt-2 mb-2">
-      <div class="row d-flex justify-content-center">
-          <div class="col-md-10">
-          <div class="comment-section">
-              <!-- first comment box -->
-              <div class="card p-3 border-blue mt-3">
-                  <span class="dots"></span>
-                  <div class="d-flex justify-content-between mt-2">
-                      <div class="d-flex flex-row">
-                      <div class="user-image">
-                          <img
-                          src="https://i.imgur.com/rvQ3LAt.jpg"
-                          width="40"
-                          class="rounded-circle"
-                          />
-                      </div>
-                      <div class="d-flex flex-column">
-                          <h6 class="mb-0">You</h6>
-                          <span class="date">Jan 21, 2021 at 10:40</span>
-                      </div>
-                      </div>
-                  </div>
-                  <p class="content">
-                      Your Comment
-                  </p>
-                  <form id= "cmtsForm">
-                      <input
-                      class="form-control"
-                      placeholder="Write a comment..."
-                      id= "newCmt"
-                      />
-                      <div class="mt-2 d-flex justify-content-end">
-                      <button class="btn btn-primary btn-sm ms-1">
-                          Submit
-                      </button>
-                      </div>
-                  </form>
-                  </div>
-                  <!--second comment box -->
-                  <div class="card p-3 border-blue mt-3">
-                      <span class="dots"></span>
-                      <div class="d-flex justify-content-between mt-2">
-                          <div class="d-flex flex-row">
-                          <div class="user-image">
-                              <img
-                              src="https://i.imgur.com/rvQ3LAt.jpg"
-                              width="40"
-                              class="rounded-circle"
-                              />
-                          </div>
-                          <div class="d-flex flex-column">
-                              <h6 class="mb-0">Martin Tyler</h6>
-                              <span class="date">Nov 29, 2020 at 9:40</span>
-                          </div>
-                          </div>
-                      </div>
-                      <p class="content">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                          ultricies, odio in interdum tristique, erat arcu vestibulum
-                          leo, non condimentum eros risus quis tellus.
-                      </p>
-                      <div class="form">
+                      <div class="col-md-3">
+                        <div class="left" style="background-color: #bbb">
+                          <h2>Menu</h2>
+                          <hr style="height:2px;border-width:0;color:gray;background-color:gray">
                           <input
-                          class="form-control"
-                          placeholder="Write a comment..."
+                            type="text"
+                            id="mySearch"
+                            onkeyup="myFunction()"
+                            placeholder="Search.."
+                            title="Type in a category"
                           />
-                          <div class="mt-2 d-flex justify-content-end">
-                          <button class="btn btn-primary btn-sm ms-1">
-                              Submit
-                          </button>
-                          </div>
+                          <ul id="myMenu">
+                            <li><a href="#">HTML</a></li>
+                            <li><a href="#">CSS</a></li>
+                            <li><a href="#">JavaScript</a></li>
+                            <li><a href="#">PHP</a></li>
+                            <li><a href="#">Python</a></li>
+                            <li><a href="#">jQuery</a></li>
+                            <li><a href="#">SQL</a></li>
+                            <li><a href="#">Bootstrap</a></li>
+                            <li><a href="#">Node.js</a></li>
+                          </ul>
+                        </div>
                       </div>
-                      </div>
-          </div>
-          </div>
-      </div>
-      </div>
-      </div>
 
-      <!-- Second API Blank Column -->
-      <div class="secondapi2" style="background-color: #bbb"></div>
+                      <!-- Page Content -->
+                      <div class="col-md-6">
+                        <div class="right" style="background-color: #ddd">
+                          <h2>Page Content</h2>
+                          <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                          <p>
+                            Start to type for a specific category inside the search bar to
+                            "filter" the search options.
+                          </p>
+                          <p>
+                            Some text..Some text..Some text..Some text..Some text..Some text..Some
+                            text..Some text..
+                          </p>
+                          <p>
+                            Some other text..Some text..Some text..Some text..Some text..Some
+                            text..Some text..Some text..
+                          </p>
+                          <p>Some text..</p>
+                        </div>
+                      </div>
+
+                  <!-- Second API Column -->
+                  <div class="col-md-3">
+                    <div class="secondapi" style="background-color: #bbb">
+                      <h2>Second API</h2>
+                      <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                      <p>
+                        Start to type for a specific category inside the search bar to
+                        "filter" the search options.
+                      </p>
+                      <p>
+                        Some text..Some text..Some text..Some text..Some text..Some text..Some
+                        text..Some text..
+                      </p>
+                      <p>
+                        Some other text..Some text..Some text..Some text..Some text..Some
+                        text..Some text..Some text..
+                      </p>
+                      <p>Some text..</p>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+
+<!-- end of Row 1 -->
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="container-fluid">
+            <div class="p-3 mb-2 text-dark">
+              <div class="row">
+
+                <!-- Blank Left Sidebar -->
+                <div class="col-md-3">
+                  <div class="left2"></div>
+                </div>
+
+                <!-- Comment Section -->
+                
+                <div class="col-md-6">
+                  <div class="right2" style="background-color: #ddd">
+                    <h2>Comments</h2>
+                    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                    <div class="container mt-2 mb-2">
+                      <div class="row d-flex justify-content-center">
+                        <div class="col-md-10">
+                          <div class="comment-section">
+                            <!-- first comment box -->
+                            <div class="card p-3 border-blue mt-3">
+                              <span class="dots"></span>
+                              <div class="d-flex justify-content-between mt-2">
+                                <div class="d-flex flex-row">
+                                  <div class="user-image">
+                                    <img
+                                    src="https://i.imgur.com/rvQ3LAt.jpg"
+                                    width="40"
+                                    class="rounded-circle"
+                                    />
+                                  </div>
+                                  <div class="d-flex flex-column">
+                                    <h6 class="mb-0">You</h6>
+                                    <span class="date">Jan 21, 2021 at 10:40</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <p class="content">
+                                Your Comment
+                              </p>
+                              <form id= "cmtsForm">
+                                <input
+                                class="form-control"
+                                placeholder="Write a comment..."
+                                id= "newCmt"
+                                />
+                                <div class="mt-2 d-flex justify-content-end">
+                                <button class="btn btn-primary btn-sm ms-1">
+                                  Submit
+                                </button>
+                                </div>
+                              </form>
+                            </div>
+                            <!--second comment box -->
+                            <div class="card p-3 border-blue mt-3">
+                              <span class="dots"></span>
+                              <div class="d-flex justify-content-between mt-2">
+                                <div class="d-flex flex-row">
+                                  <div class="user-image">
+                                    <img
+                                    src="https://i.imgur.com/rvQ3LAt.jpg"
+                                    width="40"
+                                    class="rounded-circle"
+                                    />
+                                  </div>
+                                  <div class="d-flex flex-column">
+                                    <h6 class="mb-0">Martin Tyler</h6>
+                                    <span class="date">Nov 29, 2020 at 9:40</span>
+                                  </div>
+                                </div>
+                                <p class="content">
+                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                                  ultricies, odio in interdum tristique, erat arcu vestibulum
+                                  leo, non condimentum eros risus quis tellus.
+                                </p>
+                                <div class="form">
+                                  <input
+                                  class="form-control"
+                                  placeholder="Write a comment..."
+                                  />
+                                  <div class="mt-2 d-flex justify-content-end">
+                                    <button class="btn btn-primary btn-sm ms-1">
+                                        Submit
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                      <!-- Blank Right Sidebar -->
+                      <div class="col-md-3">
+                        <div class="left2"></div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
   <script src="./js/coms.js"></script>
   </body>
