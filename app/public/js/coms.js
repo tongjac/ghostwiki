@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         })
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
+            console.log("data from getCmts function", data);
             comments = data;
             initCmts()
         })
@@ -43,75 +43,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
     getCmts();
 
-    // const submitCom = (post) => {
-    //     fetch('/api/posts', {
-    //       method: 'POST',
-    //       headers: {
-    //         'Content-Type': 'application/json',
-    //       },
-    //       body: JSON.stringify(post),
-    //     })
-    //       .then((response) => response.json())
-    //       .then((data) => {
-    //         console.log('Success in submitting post:', data);
-    //         window.location.href = '/blog';
-    //       })
-    //       .catch((error) => {
-    //         console.error('Error:', error);
-    //       });
-    //   };
-
-    // Helper function to delete a comment
-    // const deleteCmts = (e) => {
-    //     e.stopPropagation();
-    //     const { id } = e.target.dataset;
-
-    //     fetch(`/api/comments/${id}`, {
-    //         method: 'DELETE',
-    //         headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     }).then(getCmts);
-    // };
-
-      // Update a todo (PUT)
-    // const updateCmts = (comments) => {
-    //     console.log('attempting to update with', comments);
-    //     fetch('/api/comments', {
-    //         method: 'PUT',
-    //         headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(comments),
-    //     }).then((response) => console.log(response));
-    // };
 
 
-    //*******Make a createNewRow Function */
-
-      // Function to actually put the comment on the page
-//     const insertCmts = () => {
-//         console.log("insertCmts function running")
-        
-//         const comments = {
-//         text: document.getElementById("newCmt").value.trim(),
-//         };
-//         if (comments.text) {
-//             fetch('/api/comments', {
-//                 method: 'POST',
-//                 headers: {
-//                 'Content-Type': 'application/json',
-//             },
-//         body: JSON.stringify(comments),
-//             })
-//             .then((response) => response.json())
-//             .then(() => getCmts());
-//             }   
-//         console.log("The end of insertCmts")
-//   };
-//   cmtsForm.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//       insertCmts();
-//     });
 });
 
