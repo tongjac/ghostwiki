@@ -1,25 +1,29 @@
 /* Left Side Bar (Menu) & Central Content Styling */
 
 .nav-header {
-  font-family: 'IM Fell Double Pica', serif;
+  font-family: "IM Fell Double Pica", serif;
   font-size: 32px;
   letter-spacing: 5px;
   padding-left: 50px;
   color: #98d8e0;
-  }
+}
 
 .nav-header a:hover {
   color: #385053;
 }
 
 .navbar-spooky {
-  background: rgb(18,26,31);
-  background: linear-gradient(128deg, rgba(18,26,31,1) 0%, rgba(49,58,62,1) 100%);
+  background: rgb(18, 26, 31);
+  background: linear-gradient(
+    128deg,
+    rgba(18, 26, 31, 1) 0%,
+    rgba(49, 58, 62, 1) 100%
+  );
 }
 
 .nav-occult {
   /* font-family: 'Texturina', serif; */
-  font-family: 'IM Fell Double Pica', serif;
+  font-family: "IM Fell Double Pica", serif;
   font-size: 12px;
   letter-spacing: 10px;
   padding-right: 50px;
@@ -44,13 +48,14 @@ body {
   flex: 15%;
   padding-left: 30px;
   padding-top: 20px;
-  background-color: rgba(18,26,31,1);
+  background-color: rgba(18, 26, 31, 1);
 }
 
 .left2 {
   flex: 15%;
-  padding: 20px;
-  background-color: rgba(18,26,31,1)
+  padding-left: 30px;
+  padding-top: 20px;
+  background-color: rgba(18, 26, 31, 1);
 }
 
 .left h4 {
@@ -85,7 +90,7 @@ body {
 .secondapi2 {
   float: right;
   flex: 30%;
-  padding: 25px;
+  padding: 15px;
 }
 
 .bottombar {
@@ -118,7 +123,7 @@ body {
 }
 
 #myMenu li a:hover {
-  background-color: rgba(49,58,62,1);
+  background-color: rgba(49, 58, 62, 1);
   color: #ddd;
 }
 
@@ -135,7 +140,7 @@ body {
 }
 
 .border-blue {
-  border: 2px solid #98d8e0 ;
+  border: 2px solid #98d8e0;
 }
 
 .dots {
@@ -169,5 +174,3 @@ body {
   font-size: 14px;
   padding-top: 8px;
 }
-
-/* Styling Right Comment Section Ends */
