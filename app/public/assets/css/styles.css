@@ -22,13 +22,13 @@
 }
 
 .nav-occult {
-  /* font-family: 'Texturina', serif; */
   font-family: "IM Fell Double Pica", serif;
   font-size: 12px;
   letter-spacing: 10px;
   padding-right: 50px;
   color: #98d8e0;
 }
+
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -46,7 +46,7 @@ body {
 /* Left column (menu) */
 .left {
   flex: 15%;
-  padding-left: 30px;
+  padding-left: 5px;
   padding-top: 20px;
   background-color: rgba(18, 26, 31, 1);
 }
@@ -100,32 +100,40 @@ body {
 }
 
 /* Style the search box */
-#mySearch {
-  width: 90%;
-  font-size: 18px;
-  padding: 11px;
-  border: 1px solid #ddd;
+#SearchOnClick {
+  width: 100%;
+  font-size: 14px;
+
 }
 
 /* Style the navigation menu inside the left column */
+ ul {
+  list-style-type: none;
+  padding-left: 3px;
+  padding-top: 10px;
+}
+
+#articleTitleList li {
+  padding: 10px;
+}
+
+#articleTitleList li:hover {
+  background-color: rgba(49, 58, 62, 1);
+  color: #ddd;
+}
+
 #myMenu {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-#myMenu li a {
-  width: 90%;
-  padding: 10px;
-  text-decoration: none;
-  color: #ddd;
-  display: block;
-}
 
 #myMenu li a:hover {
   background-color: rgba(49, 58, 62, 1);
   color: #ddd;
 }
+
 
 /* Styling Right Comment Section Begins */
 
@@ -174,3 +182,8 @@ body {
   font-size: 14px;
   padding-top: 8px;
 }
+
+.form-control {
+  margin-top: 8px;
+}
+
