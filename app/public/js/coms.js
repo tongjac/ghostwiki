@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         })
     }
 
-    // getCmts();
+    getCmts();
     postComment();
 });
 
