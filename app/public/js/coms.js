@@ -2,7 +2,6 @@
 document.addEventListener("DOMContentLoaded", (e) => {
 console.log("DOM Loaded");
 
-
   const commentContainer = document.getElementById("commentContainer");
   const cmtsForm = document.getElementById("cmtsForm");
 
@@ -112,11 +111,10 @@ console.log("DOM Loaded");
       e.preventDefault();
       const comments = {
       comment: document.getElementById("newCmt").value.trim(),
-      user_name: document.getElementById("userName").value
+      user_name: document.getElementById("userName").value,
+      article_id: articleID + 1
       };
-      
-      console.log(comments.comment)
-      console.log(comments.user_name)
+      console.log(`Article ID: ${articleID}, User: ${comments.user_name}, Comment: "${comments.comment}`);
       fetch('/api/comments', {
               method: 'POST',
               headers: {

@@ -19,16 +19,15 @@ module.exports = (sequelize, DataTypes) => {
         field: "updated_at",
         type: DataTypes.DATE,
       },
-      user_id:{
-        type: DataTypes.INTEGER,
-        defaultValue: 1
-      } ,
       user_name: {
         type: DataTypes.STRING
       },
       comment: {
         type: DataTypes.STRING
       },
+      article_id: {
+        type: DataTypes.INTEGER
+      }
     },
     {
       // Disable the modification of tablenames; By default, sequelize will automatically
@@ -37,6 +36,7 @@ module.exports = (sequelize, DataTypes) => {
 
     }
   );
+  // Uses Sequelize to automatically create association between tables
   // comments.associate = (models) => {
   //   comments.belongsTo(models.articles, {
   //     foreignKey: {allowNull:false},

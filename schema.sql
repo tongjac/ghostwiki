@@ -27,7 +27,17 @@ CREATE TABLE users (
   PRIMARY KEY(id)
 );
 
-
+-- Comment Data section--
+DROP TABLE IF EXISTS comments;
+CREATE TABLE comments (
+  id INTEGER AUTO_INCREMENT,
+  created_at DATE,
+  updated_at DATE,
+  user_name TEXT,
+  comment TEXT,
+  article_id INTEGER, 
+  PRIMARY KEY(id)
+);
 
 -- Seed Article Data --
 INSERT INTO articles (title, date_revised, category, content, habitat) 
@@ -51,8 +61,6 @@ VALUES ("Slenderman", "2021-01-04", "Creature", "Slenderman is depicted as a thi
 INSERT INTO articles (title, date_revised, category, content, habitat)
 VALUES ("La Llorona", "2021-01-20", "Ghost", "The Weeping Woman, or the Wailer roams waterfront areas mourning her drowned children. It is said one day, Maria sees her husband with another woman and in a fit of blind rage she drowns their children in a river, which she immediately regrets. Unable to save them and consumed by guilt, she drowns herself as well, but is unable to enter the afterlife without her children.", "Waterfronts, Latin America");
 
-SELECT * FROM articles;
-
 -- Seed User Data --
 INSERT INTO users (user_name, email, password) 
 VALUES ("Fred", "Fred@mail.com", "123456789");
@@ -63,14 +71,13 @@ VALUES ("BballGurl92", "bballgurl92@mail.com", "123456789");
 INSERT INTO users (user_name, email, password) 
 VALUES ("GhostHunterx3", "GhostHunterx3@mail.com", "123456789");
 
-SELECT * FROM users;
-
 -- Seed Comment Data --
-SELECT * FROM users WHERE (id = "1");
+INSERT INTO comments (created_at, user_name, comment, article_id)
+VALUES ("2020-01-01", "User01Test", "Hey the mogghey dhoo is just a big dog right", "1");
 
--- Setting Fred's User Icon to kitten placeholder--
-UPDATE users
-SET user_icon = "https://placekitten.com/200/200"
-WHERE id = "1";
+INSERT INTO comments (created_at, user_name, comment, article_id)
+VALUES ("2020-01-16", "GhostBusterXoXo", "the banshee is really a gently creature if you don't startle her!", "2");
 
-SELECT * FROM users WHERE id = "1";
+INSERT INTO comments (created_at, user_name, comment, article_id)
+VALUES ("2020-01-21", "Unsure", "Whoops, don't bring salt trying to observe this one.", "2");
+

@@ -15,7 +15,8 @@ module.exports = (app) => {
     db.comments
       .create({
         comment: req.body.comment,
-        user_name: req.body.user_name
+        user_name: req.body.user_name,
+        article_id: req.body.article_id
       })
       .then((dbComs) => res.json(dbComs));
   });
