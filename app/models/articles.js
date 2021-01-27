@@ -25,6 +25,9 @@ module.exports = (sequelize, DataTypes) => {
       freezeTableName: true,
     }
   );
+  // articles.associate = (models) => {
+  //   articles.hasMany(models.comments)
+  // }
   return articles;
 };
 
