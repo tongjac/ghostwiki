@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
   console.log("DOM Loaded");
 
   const articleContainer = document.getElementById("articleContainer");
-  const articleForm = document.getElementById("articleForm");
   const articleTitleList = document.getElementById("articleTitleList");
   const htmlTitle = document.getElementById("htmlTitle");
   const articleContent = document.getElementById("articleContent");
@@ -42,8 +41,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
     let content = articles[1].content
     htmlTitle.innerHTML = title;
     articleContent.innerHTML = content;
-
-   
   }
   //helper function to get articles
   //the data is then added to the articles array
