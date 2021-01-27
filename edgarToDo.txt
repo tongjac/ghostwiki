@@ -1,6 +1,0 @@
-- set up connection (done)
-
-- set up server (in progress)
-    -> set up routes
-
-- set up routes javascript
