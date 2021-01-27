@@ -24,8 +24,7 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue: 1
       } ,
       user_name: {
-        type: DataTypes.STRING,
-        defaultValue: "3rd_eye_llama"
+        type: DataTypes.STRING
       },
       comment: {
         type: DataTypes.STRING

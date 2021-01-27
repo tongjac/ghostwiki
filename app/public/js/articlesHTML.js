@@ -1,6 +1,6 @@
 //waiting for DOM content to be loaded before running JS
 document.addEventListener("DOMContentLoaded", (e) => {
-  console.log("DOM Loaded");
+  // console.log("DOM Loaded");
 
   const articleContainer = document.getElementById("articleContainer");
   const articleTitleList = document.getElementById("articleTitleList");
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   const searchCol = () => {
    
     for (let i = 0; i < articles.length; i++) {
-      console.log(articles[i].title);
+      // console.log(articles[i].title);
       let listItem = document.createElement("li");
       let ArticleTitle = articles[i].title;
       listItem.classList.add("articleTitle");
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
       .then((response) => response.json())
       .then((data) => {
         articles = data;
-        console.log(articles, "this is new articles data");
+        // console.log(articles, "this is new articles data");
         searchCol();
         renderArticle(0);
         // loadNewArticle();
