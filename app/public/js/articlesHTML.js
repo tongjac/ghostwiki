@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
   const htmlTitle = document.getElementById("htmlTitle");
   const articleContent = document.getElementById("articleContent");
   const searchOnClick = document.getElementById("searchOnClick")
-  //this id was set on line 31
   const itemTitle = document.getElementById("itemTitle")
 
   
@@ -15,30 +14,34 @@ document.addEventListener("DOMContentLoaded", (e) => {
   //articles array is getting data from the getArticles function
   let articles = [];
 
-  // let loadNewArticle = () => {
-  //   //we can get article data
-  //   let title = itemTitle.value;
-  //   console.log(title)
-
-  // TRYING DOING TIS.TEXTCONTENT OR LOOK INTO THE DATA ATTRIBUTES
-  // }
+  let testFunc = (e) => {
+    if(e.target.matches(".articleTitle")){
+      let id = parseInt(e.target.getAttribute("data-id")) - 1;
+      renderArticle(id)
+    }
+   
+  }
 
   //adding titles to search col
   const searchCol = () => {
+   
     for (let i = 0; i < articles.length; i++) {
       console.log(articles[i].title);
-      let titles = articles[i].title;
       let listItem = document.createElement("li");
-      listItem.classList.add("text-white");
-      listItem.setAttribute("id", "itemTitle")
-      listItem.innerHTML = titles;
+      let ArticleTitle = articles[i].title;
+      listItem.classList.add("articleTitle");
+      listItem.setAttribute("data-id", `${articles[i].id}`)
+      listItem.innerHTML = ArticleTitle;
       articleTitleList.appendChild(listItem);
+
+
     }
+    // console.log(listItem)
   };
   
-  const renderArticle = () => {
-    let title = articles[1].title
-    let content = articles[1].content
+  const renderArticle = (id) => {
+    let title = articles[id].title
+    let content = articles[id].content
     htmlTitle.innerHTML = title;
     articleContent.innerHTML = content;
   }
@@ -57,14 +60,15 @@ document.addEventListener("DOMContentLoaded", (e) => {
         articles = data;
         console.log(articles, "this is new articles data");
         searchCol();
-        renderArticle();
+        renderArticle(0);
         // loadNewArticle();
+        
       });
   };
   //running this function allows the use of the data
   //from the table right away in other functions
   getArticles();
 
-  // itemTitle.addEventListener("click", loadNewArticle)
+articleTitleList.addEventListener("click", testFunc)
   
 });
