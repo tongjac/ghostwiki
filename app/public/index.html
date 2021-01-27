@@ -1,236 +1,185 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>GHOST wiki</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica&family=Texturina:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-    <link rel="shortcut icon" href="">
-  </head>
 
-  <body>
-    <!-- Creating NavBar with Logo and Title -->
-    <nav class="navbar nav-header navbar-spooky">
-        <a class="navbar-brand">
-          <img src="https://img.icons8.com/pastel-glyph/64/ffffff/ghost.png" height="35"/>
-          <!-- <img
-        src="https://banner2.cleanpng.com/20180416/ssq/kisspng-wikipedia-logo-online-encyclopedia-libra-5ad4331a5173f6.5132854715238561543336.jpg"
-        height="30"
-      /> -->
-          GHOST wiki</a>
-      <span class="navbar-text nav-occult">
-        ALL THINGS OCCULT
-      </span>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>GHOST wiki</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica&family=Texturina:wght@300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="shortcut icon" href="">
+</head>
 
-    <!-- Dropdown Menu List -->
-    <nav
-      class="navbar navbar-expand-lg navbar-light"
-      style="background-color: #5a6b77; height: 35px"
-    >
-      <div class="container-fluid">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle text-white h6"
-                href="#"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown Menu
-              </a>
-              <ul
-                class="dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<body>
+  <!-- Creating NavBar with Logo and Title -->
+  <nav class="navbar nav-header navbar-spooky">
+    <a class="navbar-brand">
+      <img src="https://img.icons8.com/pastel-glyph/64/ffffff/ghost.png" height="35" />
+      GHOST wiki
+    </a>
+    <span class="navbar-text nav-occult">
+      ALL THINGS OCCULT
+    </span>
+  </nav>
 
-    <!-- Sidebar with search bar and other topics -->
-    <div class="row">
-      <div class="left">
-        <h4>Menu</h4>
-        <input
-          type="text"
-          id="mySearch"
-          onkeyup="myFunction()"
-          placeholder="Search.."
-          title="Type in a category"
-        />
-        <ul id="myMenu">
-          <li><a href="#">HTML</a></li>
-          <li><a href="#">CSS</a></li>
-          <li><a href="#">JavaScript</a></li>
-          <li><a href="#">PHP</a></li>
-          <li><a href="#">Python</a></li>
-          <li><a href="#">jQuery</a></li>
-          <li><a href="#">SQL</a></li>
-          <li><a href="#">Bootstrap</a></li>
-          <li><a href="#">Node.js</a></li>
+  <!-- Dropdown Menu List -->
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #5a6b77; height: 35px">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white h6" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown Menu
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </div>
+    </div>
+  </nav>
 
-      <!-- Page Content -->
-      <div class="right">
-        <h3>Article Content</h3>
-        <p>
-          Start to type for a specific category inside the search bar to
-          "filter" the search options.
-        </p>
-        <p>
-          Some text..Some text..Some text..Some text..Some text..Some text..Some
-          text..Some text..
-        </p>
-        <p>
-          Some other text..Some text..Some text..Some text..Some text..Some
-          text..Some text..Some text..
-        </p>
-        <p>Some text..</p>
-      </div>
+  <div class="col-md-12">
+    <div class="container-fluid">
+      <div class="p-3 mb-2 text-dark">
+        <div class="row">
 
-      <!-- Second API Column -->
-      <div class="secondapi" style="background-color: #bbb">
-        <h3>API Content</h3>
-        <p>
-          Start to type for a specific category inside the search bar to
-          "filter" the search options.
-        </p>
-        <p>
-          Some text..Some text..Some text..Some text..Some text..Some text..Some
-          text..Some text..
-        </p>
-        <p>
-          Some other text..Some text..Some text..Some text..Some text..Some
-          text..Some text..Some text..
-        </p>
-        <p>Some text..</p>
-      </div>
+          <!-- Title List -->
+          <div class="col-md-3" style="background-color:rgba(18,26,31,1)">
+            <div class="left">
+              <h4>Menu</h4>
+              <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+              <input type="text" id="SearchOnClick" placeholder="Search.."
+                title="Type in a category" />
+              <ul id="articleTitleList">
+              </ul>
+            </div>
+          </div>
+          <!-- end of title list -->
+          <!--Main Page Content Starts -->
+          <div class="col-md-6" style="background-color: #ddd">
+            <div class="right" id= "articleContainer">
+              <h3 id= "htmlTitle"></h3>
+              <p id= "articleContent"></p>
+              <hr style="height:2px;border-width:0;color:gray">
+            </div>
+          </div>
 
-      <!-- end of strip 1 -->
+          <!-- Second API Column -->
+          <div class="col-md-3" style="background-color: #bbb">
+            <div class="secondapi">
+              <h3>API Content</h3>
+              <p>
+                Start to type for a specific category inside the search bar to
+                "filter" the search options.
+              </p>
+              <p>
+                Some text..Some text..Some text..Some text..Some text..Some text..Some
+                text..Some text..
+              </p>
+              <p>
+                Some other text..Some text..Some text..Some text..Some text..Some
+                text..Some text..Some text..
+              </p>
+              <p>Some text..</p>
+            </div>
+          </div>
 
-      <span class="whiteband"></span>
+          <!-- end of Row 1 -->
 
+          <!-- Blank Left Sidebar -->
+          <div class="col-md-3" style="background-color:rgba(18,26,31,1)">
+            <div class="left2"></div>
+          </div>
 
-          <!-- Sidebar Blank -->
-    <div class="left2"></div>
-
-      <!-- Page Content -->
-      <div class="right2" style="background-color: #ddd">
-        <h4>Comments</h4>
-        <div class="container mt-2 mb-2">
-          <div class="row d-flex justify-content-center">
+          <!-- Comment Section -->
+          <div class="col-md-6">
+            <h4>Comments</h4>
             <div class="col-md-12">
-              <div class="comment-section">
-                <!-- first comment box -->
+
+               <!-- form starts -->
+              <div>
+
                 <div class="card p-3 border-blue mt-3">
                   <span class="dots"></span>
-                    <div class="d-flex justify-content-between mt-2">
-                      <div class="d-flex flex-row">
-                        <div class="user-image">
-                            <img
-                            src="https://i.imgur.com/rvQ3LAt.jpg"
-                            width="40"
-                            class="rounded-circle"
-                            />
-                        </div>
-                        <div class="d-flex flex-column">
-                          <h6 class="mb-0">You</h6>
-                          <span class="date">Jan 21, 2021 at 10:40</span>
-                        </div>
+                  <div class="d-flex justify-content-between mt-2">
+                    <div class="d-flex flex-row">
+                      <div class="d-flex flex-column"></div>
+                    </div>
+                  </div>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <!-- Comment Form for the user -->
+                        <form id="cmtsForm">
+                          <input class="form-control" placeholder="Write your User Name" id="userName"/>
+                          <input class="form-control" placeholder="Write a comment..." id="newCmt" />
+                          <div class="mt-2 d-flex justify-content-end">
+                            <button class="btn btn-primary btn-sm ms-1">
+                              Submit
+                            </button>
+                          </div>
+                        </form>
                       </div>
                     </div>
-                    <p class="content">
-                        Your Comment
-                    </p>
-                      <form id= "cmtsForm">
-                          <input
-                          class="form-control"
-                          placeholder="Write a comment..."
-                          id= "newCmt"
-                          />
-                          <div class="mt-2 d-flex justify-content-end">
-                          <button class="btn btn-primary btn-sm ms-1">
-                              Submit
-                          </button>
-                          </div>
-                      </form>
+                  </div>
                 </div>
+
+              </div>
+               <!-- form ends -->
+              
+              <div class="comment-section" id="commentContainer">
                 <!--second comment box -->
                 <div class="card p-3 border-blue mt-3">
-                    <span class="dots"></span>
-                    <div class="d-flex justify-content-between mt-2">
-                        <div class="d-flex flex-row">
-                          <div class="user-image">
-                            <img
-                            src="https://i.imgur.com/rvQ3LAt.jpg"
-                            width="40"
-                            class="rounded-circle"
-                            />
-                          </div>
-                        <div class="d-flex flex-column">
-                            <h6 class="mb-0">Martin Tyler</h6>
-                            <span class="date">Nov 29, 2020 at 9:40</span>
-                        </div>
+                  <span class="dots"></span>
+                  <div class="d-flex justify-content-between mt-2">
+                    <div class="d-flex flex-row">
+                      <div class="d-flex flex-column">
+                        <h6 class="mb-0">Another User</h6>
+                        <hr>
                       </div>
                     </div>
-                    <p class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                        ultricies, odio in interdum tristique, erat arcu vestibulum
-                        leo, non condimentum eros risus quis tellus.
-                    </p>
-                    <div class="form">
-                        <input
-                        class="form-control"
-                        placeholder="Write a comment..."
-                        />
-                        <div class="mt-2 d-flex justify-content-end">
-                        <button class="btn btn-primary btn-sm ms-1">
-                            Submit
-                        </button>
-                        </div>
+                  </div>
+                  
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-9">
+                        <p class="content">
+                          Some text..Some text..Some text..Some text..Some text..Some text..
+                        </p>
+                      </div>
                     </div>
+
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Second API Blank Column -->
+          <div class="col-md-3" style="background-color: #bbb">
+          </div>
+
         </div>
       </div>
-
-      <!-- Second API Blank Column -->
-      <div class="secondapi2" style="background-color: #bbb"></div>
     </div>
   </div>
-
+  <script src="./js/articlesHTML.js"></script>
   <script src="./js/coms.js"></script>
-  </body>
+</body>
+
 </html>
