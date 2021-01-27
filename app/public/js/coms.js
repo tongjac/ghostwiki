@@ -42,6 +42,43 @@ document.addEventListener("DOMContentLoaded", (e) => {
     //    let userImgDiv = 
     // }
 
+    // Populates comments to the page
+    const postComment = () => {
+      const userIcon = "http://placekitten.com/50/50";
+      const userName = "3rd_Eye_LLama";
+      const comment = "Text content text content text content"
+      for (let i = 0; i < 4; i++) {
+        // Inserts the literal card HTML with escapes for unique user data
+        commentContainer.insertAdjacentHTML(
+          'beforeend',
+          `<div class="card p-3 border-blue mt-3">
+          <span class="dots"></span>
+          <div class="d-flex justify-content-between mt-2">
+            <div class="d-flex flex-row">
+            <img src="${userIcon}">
+              <div class="d-flex flex-column">
+                <h6 class="mb-0">${userName}</h6>
+                <hr>
+              </div>
+            </div>
+          </div>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9">
+                <p class="content">
+                  ${comment}
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>`
+          );
+      };
+    }
+
+
     //helper function to get comments
     const getCmts = () => {
         fetch("/api/comments", {
@@ -58,9 +95,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         })
     }
 
-    getCmts();
-
-
-
+    // getCmts();
+    postComment();
 });
 
