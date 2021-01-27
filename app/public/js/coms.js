@@ -1,51 +1,18 @@
 //waiting for DOM content to be loaded before running JS
 document.addEventListener("DOMContentLoaded", (e) => {
-    console.log("DOM Loaded");
+    // console.log("DOM Loaded");
 
     const commentContainer = document.getElementById("commentContainer");
     const cmtsForm = document.getElementById("cmtsForm");
 
     //init comment array
-    let comments = [];
+    let commentsArray = [];
     
-    //This function resets comments with the comments 
-    //that have been stored in the database
-    // const initCmts = () => {
-    //     // cmtsContainer.innerHTML = '';
-    //     const cmtsToAdd = [];
-
-    //     for (let i = 0; i < comments.length; i++) {
-    //         //***********Add create new row later */
-    //         cmtsToAdd.push((comments[i]));
-            
-    //     }
-    // }
-    // const renderCom = () => {
-       //the cards will go inside of commentContainer 
-       //card with the class stuff
-       //then make the d-flex flex-row section
-       //within that the user-image
-       //make an img section
-
-       //then a d-flex flex-column
-       //h6 class 
-       //span class
-
-       //comment text
-
-    //    let cardContainer = document.createElement("div");
-    //    cardContainer.classList.add("card p-3 border-blue mt-3");
-    //    let cardDetailsContainer = document.createElement("div");
-    //    cardDetailsContainer.classList.add("d-flex justify-content-between mt-2")
-    //    let cardDetailsSubContainer =  document.createElement("div")
-    //    cardDetailsSubContainer.classList.add("d-flex flex-row")
-    //    let userImgDiv = 
-    // }
 
     // Populates comments to the page
     const postComment = () => {
       const userIcon = "http://placekitten.com/50/50";
-      const userName = "3rd_Eye_LLama";
+      const userName = "lil_wolfmask";
       const comment = "Text content text content text content"
       for (let i = 0; i < 4; i++) {
         // Inserts the literal card HTML with escapes for unique user data
@@ -90,12 +57,41 @@ document.addEventListener("DOMContentLoaded", (e) => {
         .then((response) => response.json())
         .then((data) => {
             console.log("data from getCmts function", data);
-            comments = data;
-            // initCmts()
+            commentsArray = data;
         })
     }
 
-    getCmts();
+ 
     postComment();
+
+
+    // new code
+    const postNewCmt = (e) => {
+      e.preventDefault();
+      const comments = {
+      comment: document.getElementById("newCmt").value.trim(),
+      user_name: document.getElementById("userName").value
+      };
+      
+      console.log(comments.comment)
+      console.log(comments.user_name)
+      fetch('/api/comments', {
+              method: 'POST',
+              headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(comments),
+          })
+          .then((response) => response.json())
+          .then(() => {
+            commentsArray.push(comments)
+            console.log("After witchcraft: ", commentsArray)
+          })
+    };
+
+    cmtsForm.addEventListener("submit", postNewCmt)
+
+    getCmts();
+
 });
 
