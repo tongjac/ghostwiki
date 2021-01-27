@@ -16,11 +16,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
   //articles array is getting data from the getArticles function
   let articles = [];
 
-  let loadNewArticle = () => {
-    //we can get article data
-    let title = itemTitle.value;
-    console.log(title)
-  }
+  // let loadNewArticle = () => {
+  //   //we can get article data
+  //   let title = itemTitle.value;
+  //   console.log(title)
+
+  // TRYING DOING TIS.TEXTCONTENT OR LOOK INTO THE DATA ATTRIBUTES
+  // }
 
   //adding titles to search col
   const searchCol = () => {
@@ -59,13 +61,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
         console.log(articles, "this is new articles data");
         searchCol();
         renderArticle();
-        loadNewArticle();
+        // loadNewArticle();
       });
   };
   //running this function allows the use of the data
   //from the table right away in other functions
   getArticles();
 
-  itemTitle.addEventListener("click", loadNewArticle)
+  // itemTitle.addEventListener("click", loadNewArticle)
   
 });
