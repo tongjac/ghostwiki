@@ -8,7 +8,10 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true
         },
         user_name: DataTypes.STRING,
-        user_icon: DataTypes.STRING,
+        user_icon: {
+            type: DataTypes.STRING,
+            defaultValue: "https://placekitten.com/g/200/200/?"
+        },
         email: DataTypes.STRING,
         password: DataTypes.STRING,
         contribution: DataTypes.STRING
