@@ -38,5 +38,11 @@ module.exports = (sequelize, DataTypes) => {
 
     }
   );
+  // comments.associate = (models) => {
+  //   comments.belongsTo(models.articles, {
+  //     foreignKey: {allowNull:false},
+  //     onDelete: "cascade"
+  //   })
+  // }
   return comments;
 };

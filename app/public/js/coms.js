@@ -100,7 +100,23 @@ document.addEventListener("DOMContentLoaded", (e) => {
         // initCmts()
       });
   };
+  
+    //helper function to get comments
+    const getCmts = () => {
+        fetch("/api/comments", {
+            method: "GET",
+            headers: {
+                "content-type": "application/json"
+            }
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log("data from getCmts function", data);
+            comments = data;
+            // initCmts()
+        })
+    }
 
-  // getCmts();
-  postComment();
+    getCmts();
+    postComment();
 });
