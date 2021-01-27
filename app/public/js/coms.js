@@ -1,4 +1,4 @@
-//waiting for DOM content to be loaded before running JS
+// Waiting for DOM content to be loaded before running JS
 document.addEventListener("DOMContentLoaded", (e) => {
 console.log("DOM Loaded");
 
@@ -8,44 +8,9 @@ console.log("DOM Loaded");
    //init comment array
   let commentsArray = [];
 
-  //init comment array
-  let comments = [];
-
-  //This function resets comments with the comments
-  //that have been stored in the database
-  // const initCmts = () => {
-  //     // cmtsContainer.innerHTML = '';
-  //     const cmtsToAdd = [];
-
-  //     for (let i = 0; i < comments.length; i++) {
-  //         //***********Add create new row later */
-  //         cmtsToAdd.push((comments[i]));
-
-  //     }
-  // }
-  // const renderCom = () => {
-  //the cards will go inside of commentContainer
-  //card with the class stuff
-  //then make the d-flex flex-row section
-  //within that the user-image
-  //make an img section
-
-  //then a d-flex flex-column
-  //h6 class
-  //span class
-
-  //comment text
-
-  //    let cardContainer = document.createElement("div");
-  //    cardContainer.classList.add("card p-3 border-blue mt-3");
-  //    let cardDetailsContainer = document.createElement("div");
-  //    cardDetailsContainer.classList.add("d-flex justify-content-between mt-2")
-  //    let cardDetailsSubContainer =  document.createElement("div")
-  //    cardDetailsSubContainer.classList.add("d-flex flex-row")
-  //    let userImgDiv =
-  // }
-    // Populates comments to the page
+    // Populates comments to the page when called
     const postComment = () => {
+      console.log(articleID + " Hello from Coms.js");
       const userIcon = "http://placekitten.com/50/50";
       const userName = "lil_wolfmask";
       const comment = "Text content text content text content"
@@ -87,7 +52,7 @@ console.log("DOM Loaded");
     }
   };
 
-  //helper function to get comments
+  // Helper function to get comments
   const getCmts = () => {
     fetch("/api/comments", {
       method: "GET",
@@ -102,11 +67,22 @@ console.log("DOM Loaded");
         // initCmts()
       });
   };
+
+  const countCmts = () => {
+    let countThis = articleID + 1;
+    fetch(`/api/comments/count=${countThis}`, {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("The number of comments for article " + articleID + " is ", data);
+      });
+  };
  
-    postComment();
-
-
-    // new code
+    // Posting a New Comment 
     const postNewCmt = (e) => {
       e.preventDefault();
       const comments = {
@@ -129,8 +105,12 @@ console.log("DOM Loaded");
           })
     };
 
-    cmtsForm.addEventListener("submit", postNewCmt)
-
     getCmts();
+    cmtsForm.addEventListener("submit", postNewCmt);
+    document.getElementById("articleTitleList")
+    .addEventListener("click", () => {
+      postComment(),
+      countCmts()
+    });
 
 });
