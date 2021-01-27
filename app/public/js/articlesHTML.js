@@ -1,3 +1,4 @@
+var articleID;
 //waiting for DOM content to be loaded before running JS
 document.addEventListener("DOMContentLoaded", (e) => {
   // console.log("DOM Loaded");
@@ -40,6 +41,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   };
   
   const renderArticle = (id) => {
+    articleID = parseInt(id);
     let title = articles[id].title
     let content = articles[id].content
     htmlTitle.innerHTML = title;
