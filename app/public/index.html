@@ -71,7 +71,7 @@
           </div>
           <!-- end of title list -->
           <!--Main Page Content Starts -->
-          <div class="col-md-6" style="background-color: #ddd">
+          <div class="col-md-6" style="background-color: #ddd; color: darkslategrey">
             <div class="right" id= "articleContainer">
               <h3 id= "htmlTitle"></h3>
               <p id= "articleContent"></p>
@@ -80,22 +80,21 @@
           </div>
 
           <!-- Second API Column -->
-          <div class="col-md-3" style="background-color: #bbb">
+          <div class="col-md-3" style="background-color: #bbb; color: darkslategrey">
             <div class="secondapi">
-              <h3>API Content</h3>
-              <p>
-                Start to type for a specific category inside the search bar to
-                "filter" the search options.
-              </p>
-              <p>
-                Some text..Some text..Some text..Some text..Some text..Some text..Some
-                text..Some text..
-              </p>
-              <p>
-                Some other text..Some text..Some text..Some text..Some text..Some
-                text..Some text..Some text..
-              </p>
-              <p>Some text..</p>
+                <h3>Translator</h3>
+                <h4>Choose a Language to translate</h4>
+                <div id="google_translate_element"></div>
+  
+                <script type="text/javascript">
+                  function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+                  }
+                </script>
+  
+                <script type="text/javascript"
+                  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+                </script>
             </div>
           </div>
 
@@ -111,7 +110,7 @@
             <h4>Comments</h4>
             <div class="col-md-12">
 
-               <!-- form starts -->
+            <!-- form starts -->
               <div>
 
                 <div class="card p-3 border-blue mt-3">
@@ -140,7 +139,7 @@
                 </div>
 
               </div>
-               <!-- form ends -->
+            <!-- form ends -->
               
               <div class="comment-section" id="commentContainer">
                 <!--second comment box -->

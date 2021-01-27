@@ -82,16 +82,17 @@ body {
 }
 
 .secondapi {
-  float: right;
+  float: left;
   flex: 30%;
   padding: 15px;
+
 }
 
-.secondapi2 {
+/* .secondapi2 {
   float: right;
   flex: 30%;
   padding: 15px;
-}
+} */
 
 .bottombar {
   float: none;
