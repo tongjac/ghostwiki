@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", (e) => {
     console.log("DOM Loaded");
 
-    const cmtsContainer = document.getElementById("cmtsContainer");
+    const commentContainer = document.getElementById("commentContainer");
     const cmtsForm = document.getElementById("cmtsForm");
 
     //init comment array
@@ -10,20 +10,37 @@ document.addEventListener("DOMContentLoaded", (e) => {
     
     //This function resets comments with the comments 
     //that have been stored in the database
-    const initCmts = () => {
-        // cmtsContainer.innerHTML = '';
-        const cmtsToAdd = [];
+    // const initCmts = () => {
+    //     // cmtsContainer.innerHTML = '';
+    //     const cmtsToAdd = [];
 
-        for (let i = 0; i < comments.length; i++) {
-            //***********Add create new row later */
-            cmtsToAdd.push((comments[i]));
+    //     for (let i = 0; i < comments.length; i++) {
+    //         //***********Add create new row later */
+    //         cmtsToAdd.push((comments[i]));
             
-        }
+    //     }
+    // }
+    // const renderCom = () => {
+       //the cards will go inside of commentContainer 
+       //card with the class stuff
+       //then make the d-flex flex-row section
+       //within that the user-image
+       //make an img section
 
-        //*******bring this back once we have the html section updated */
-        // cmtsToAdd.forEach((row) => cmtsContainer.append(row))
+       //then a d-flex flex-column
+       //h6 class 
+       //span class
 
-    }
+       //comment text
+
+    //    let cardContainer = document.createElement("div");
+    //    cardContainer.classList.add("card p-3 border-blue mt-3");
+    //    let cardDetailsContainer = document.createElement("div");
+    //    cardDetailsContainer.classList.add("d-flex justify-content-between mt-2")
+    //    let cardDetailsSubContainer =  document.createElement("div")
+    //    cardDetailsSubContainer.classList.add("d-flex flex-row")
+    //    let userImgDiv = 
+    // }
 
     //helper function to get comments
     const getCmts = () => {
@@ -35,83 +52,15 @@ document.addEventListener("DOMContentLoaded", (e) => {
         })
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
+            console.log("data from getCmts function", data);
             comments = data;
-            initCmts()
+            // initCmts()
         })
     }
 
     getCmts();
 
-    // const submitCom = (post) => {
-    //     fetch('/api/posts', {
-    //       method: 'POST',
-    //       headers: {
-    //         'Content-Type': 'application/json',
-    //       },
-    //       body: JSON.stringify(post),
-    //     })
-    //       .then((response) => response.json())
-    //       .then((data) => {
-    //         console.log('Success in submitting post:', data);
-    //         window.location.href = '/blog';
-    //       })
-    //       .catch((error) => {
-    //         console.error('Error:', error);
-    //       });
-    //   };
-
-    // Helper function to delete a comment
-    // const deleteCmts = (e) => {
-    //     e.stopPropagation();
-    //     const { id } = e.target.dataset;
-
-    //     fetch(`/api/comments/${id}`, {
-    //         method: 'DELETE',
-    //         headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     }).then(getCmts);
-    // };
-
-      // Update a todo (PUT)
-    // const updateCmts = (comments) => {
-    //     console.log('attempting to update with', comments);
-    //     fetch('/api/comments', {
-    //         method: 'PUT',
-    //         headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(comments),
-    //     }).then((response) => console.log(response));
-    // };
 
 
-    //*******Make a createNewRow Function */
-
-      // Function to actually put the comment on the page
-//     const insertCmts = () => {
-//         console.log("insertCmts function running")
-        
-//         const comments = {
-//         text: document.getElementById("newCmt").value.trim(),
-//         };
-//         if (comments.text) {
-//             fetch('/api/comments', {
-//                 method: 'POST',
-//                 headers: {
-//                 'Content-Type': 'application/json',
-//             },
-//         body: JSON.stringify(comments),
-//             })
-//             .then((response) => response.json())
-//             .then(() => getCmts());
-//             }   
-//         console.log("The end of insertCmts")
-//   };
-//   cmtsForm.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//       insertCmts();
-//     });
 });
 
