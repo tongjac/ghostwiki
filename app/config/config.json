@@ -9,7 +9,7 @@
   },
   "test": {
     "username": "root",
-    "password": "abc123",
+    "password": "your_current_password",
     "database": "wiki_db",
     "host": "127.0.0.1",
     "dialect": "mysql"

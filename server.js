@@ -15,7 +15,7 @@ if(process.env.JAWSDB_URL){
     connection = mysql.createConnection({
         host: 'localhost',
         user: 'root',
-        password:'abc123',
+        password:'your_current_password',
         database: "wiki_db"
     })
 }
