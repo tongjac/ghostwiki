@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
             </div>
           </div>
             </div>`
-          commentContainer.insertAdjacentHTML('afterbegin', kitties);
+          commentContainer.insertAdjacentHTML('afterbegin', comCard);
         };
       };
     };
