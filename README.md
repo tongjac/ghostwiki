@@ -15,6 +15,7 @@
 - mySQL
 - mySQL2
 - Sequelize
+- Heroku
 - Ouija Board
 
 ## Installations
