@@ -1,6 +1,6 @@
 // Waiting for DOM content to be loaded before running JS
 document.addEventListener("DOMContentLoaded", (e) => {
-console.log("DOM Loaded");
+  console.log("DOM Loaded");
 
   const commentContainer = document.getElementById("commentContainer");
   const cmtsForm = document.getElementById("cmtsForm");
@@ -97,6 +97,23 @@ console.log("DOM Loaded");
             console.log("After witchcraft: ", commentsArray)
           })
 
+    };
+
+    const deleteCmts = (id) => {
+      let comID = user.value
+      console.log("Getting comments in the first place");
+      fetch("/api/comments/:id", {
+        method: "DELETE",
+        headers: {
+          "content-type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("data from getCmts function", data);
+          commentsArray = data;
+          postComment();
+        });
     };
 
     getCmts();
