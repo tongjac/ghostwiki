@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   const postComment = () => {
     let comCard = "";
     commentContainer.innerHTML = "";
-    for (let i = 0; i < commentsArray.length; i++) {
+    for (let i = 1; i < commentsArray.length; i++) {
       if (commentsArray[i].article_id === articleID + 1) {
         let userIcon = "http://placekitten.com/50/50";
         let userName = commentsArray[i].user_name;
