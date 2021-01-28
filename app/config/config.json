@@ -1,13 +1,12 @@
 {
   "development": {
-    "username": "root",
-    "password": "password",
-    "database": "wiki_db",
-    "host": "127.0.0.1",
+    "username": "p8mv9qpepeu4giqf",
+    "password": "h2s1kia9442fxqzr",
+    "database": "uncdmap5d3bxrtsn",
+    "host": "lfmerukkeiac5y5w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql",
-    "define":{"timestamps": false}
+    "define": {"timestamps": false}
   },
-
   "test": {
     "username": "root",
     "password": "abc123",
@@ -16,10 +15,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "abc123",
-    "database": "wiki_db",
-    "host": "127.0.0.1",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
 }
