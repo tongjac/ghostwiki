@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   const commentContainer = document.getElementById("commentContainer");
   const cmtsForm = document.getElementById("cmtsForm");
+  const commentID = document.getElementById("comment-id");
 
   //init comment array
   let commentsArray = [];
@@ -27,17 +28,15 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   // Populates comments to the page when called
   const postComment = () => {
-    let kitties = "";
+    let comCard = "";
     commentContainer.innerHTML = "";
-    console.log(articleID + " Hello from Coms.js");
-    console.log("Line 30 coms.js" + commentsArray.length);
     for (let i = 0; i < commentsArray.length; i++) {
       if (commentsArray[i].article_id === articleID + 1) {
         let userIcon = "http://placekitten.com/50/50";
         let userName = commentsArray[i].user_name;
         let comment = commentsArray[i].comment;
         let comID = commentsArray[i].id;
-        kitties = `<div class="card p-3 border-blue mt-3">
+        comCard = `<div class="card p-3 border-blue mt-3">
         <span class="dots"></span>
         <div class="d-flex justify-content-between mt-2">
           
@@ -61,7 +60,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
                   </div>
                 </div>
                   <div class="col-md-2" style="float:right">
-                    <button type="button" class="btn btn-danger btn-sm ms-1">Delete</button>
+                    <button type="button" class="btn btn-danger btn-sm ms-1" comment-id="${comID}">Delete</button>
                   </div>
                 </div>
               </div>
@@ -69,7 +68,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
           
         </div>
       </div>`;
-        commentContainer.insertAdjacentHTML("afterbegin", kitties);
+        commentContainer.insertAdjacentHTML("afterbegin", comCard);
       }
     }
   };
@@ -101,25 +100,22 @@ document.addEventListener("DOMContentLoaded", (e) => {
       });
   };
 
-  const deleteCmts = (id) => {
-    let comID = user.value;
-    console.log("Getting comments in the first place");
+  const deleteCmts = (e) => {
     fetch("/api/comments/:id", {
-      method: "DELETE",
-      headers: {
-        "content-type": "application/json",
-      },
+     method: "DELETE",
+     headers: {
+       "content-type": "application/json",
+     },
     })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("data from getCmts function", data);
-        commentsArray = data;
-        postComment();
-      });
+     .then((response) => response.json())
+     .then((data) => {
+       console.log(e, data);
+       commentsArray = data;
+       postComment();
+     });
   };
 
   getCmts();
-
   cmtsForm.addEventListener("submit", (e) => {
     e.preventDefault(), postNewCmt(e), getCmts(e);
   });
@@ -127,6 +123,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
   document.getElementById("articleTitleList").addEventListener("click", () => {
     postComment();
   });
+  
+  commentID.addEventListener("click", deleteCmts(commentID.getAttribute("comment-id"));
 });
-
-// module.exports = coms;
