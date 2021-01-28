@@ -4,9 +4,9 @@
 
 - A group project by Edgar, Jacky, Soumya, and Kieran
 
-### Why?
+### Story
 
-- Why not? Ghosts are cool.
+- This project was sparked from a desire to have a place for verified community contributions to be used as a reference. This data would be viewable on the internet and provide a source of truth based on obervation and analysis from others' edits and information. This project drew inspiration from the many Wikis of the internet, each focused on a certain topic. This group considered quite a few topics to start with, from food, music, and travel to games, statistical analysis on world health reports, and hiring numbers. Why ghosts, you ask? We're of the opinion they're quite... cool.
 
 ## Installations
 
