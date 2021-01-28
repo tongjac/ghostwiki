@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   const commentContainer = document.getElementById("commentContainer");
   const cmtsForm = document.getElementById("cmtsForm");
-  const commentID = document.getElementById("comment-id");
 
   //init comment array
   let commentsArray = [];
@@ -102,17 +101,17 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   const deleteCmts = (e) => {
     fetch("/api/comments/:id", {
-     method: "DELETE",
-     headers: {
-       "content-type": "application/json",
-     },
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+      },
     })
-     .then((response) => response.json())
-     .then((data) => {
-       console.log(e, data);
-       commentsArray = data;
-       postComment();
-     });
+      .then((response) => response.json())
+        .then((data) => {
+          console.log(e, data);
+        commentsArray = data;
+        postComment();
+      });
   };
 
   getCmts();
@@ -124,5 +123,4 @@ document.addEventListener("DOMContentLoaded", (e) => {
     postComment();
   });
   
-  commentID.addEventListener("click", deleteCmts(commentID.getAttribute("comment-id"));
 });
