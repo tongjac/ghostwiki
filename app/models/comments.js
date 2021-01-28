@@ -1,6 +1,4 @@
 
-// FIGURE OUT HOW TO DO FOREIGN KEYS
-
 //allows use of the comments model in other files.
 module.exports = (sequelize, DataTypes) => {
   const comments = sequelize.define(
@@ -30,18 +28,11 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     {
-      // Disable the modification of tablenames; By default, sequelize will automatically
-      // Transform all passed model names (first parameter of define) into plural. If not set:
+      // Disable the modification of tablenames; By default, sequelize will automatically transform all passed model names (first parameter of define) into plural.
       freezeTableName: true,
 
     }
   );
-  // Uses Sequelize to automatically create association between tables
-  // comments.associate = (models) => {
-  //   comments.belongsTo(models.articles, {
-  //     foreignKey: {allowNull:false},
-  //     onDelete: "cascade"
-  //   })
-  // }
+  
   return comments;
 };

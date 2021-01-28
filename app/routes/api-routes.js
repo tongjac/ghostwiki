@@ -7,18 +7,7 @@ module.exports = (app) => {
     db.comments.findAll({}).then((dbComs) => res.json(dbComs));
   });
 
-  // I want to count how many comments are in an article.
-  app.get("/api/comments/count", (req, res) => {
-    // let articleID = req.query.count;
-    // console.log(articleID + );
-    db.comments
-    .countAndFindAll({
-      where: {
-        article_id: "2"
-      }
-    }).then((dbComs) => res.json(dbComs));
-  });
-
+  // Posts user comment to database
   app.post("/api/comments", (req, res) => {
     console.log(req.body);
     db.comments
@@ -30,6 +19,7 @@ module.exports = (app) => {
       .then((dbComs) => res.json(dbComs));
   });
 
+  // Deletes Comments with the passed id
   app.delete("/api/comments/:id", (req, res) => {
     db.comments
       .destroy({
@@ -40,7 +30,7 @@ module.exports = (app) => {
       .then((dbComs) => res.json(dbComs));
   });
 
-  //We might, probably will,  need to mdify this later
+  // Update function for existing comments (unused)
   app.put("/api/comments", (req, res) => {
     db.comments
       .update(req.body, {
@@ -51,14 +41,14 @@ module.exports = (app) => {
       .then((dbComs) => res.json(dbComs));
   });
 
+  // Populates an array with all article data
   app.get("/api/articles", (req, res) => {
     console.log("getting articles");
     db.articles.findAll({}).then((dbArticles) => res.json(dbArticles));
   });
 
-  // PROBLEM WITH date_revised NOT HAVING DEFAULT VALUE
+  // Posts articles
   app.post("/api/articles", (req, res) => {
-    console.log(req.body);
     db.articles
       .create({
         title: req.body.title,
@@ -68,6 +58,7 @@ module.exports = (app) => {
       .then((dbArticles) => res.json(dbArticles));
   });
 
+  // Deletes articles with the passed id
   app.delete("/api/articles/:id", (req, res) => {
     db.articles
       .destroy({
@@ -78,7 +69,7 @@ module.exports = (app) => {
       .then((dbArticles) => res.json(dbArticles));
   });
 
-  //THIS NEEDS TO BE FIXED
+  // Unused update method for updating existing articles
   app.put("/api/articles", (req, res) => {
     db.articles
       .update(req.body, {
@@ -89,12 +80,13 @@ module.exports = (app) => {
       .then((dbArticles) => res.json(dbArticles));
   });
 
+  // Obtains user data on get
   app.get("/api/user", (req, res) => {
     console.log("getting user");
     db.user.findAll({}).then((dbUser) => res.json(dbUser));
   });
 
-  // Commented out for now
+  // Creation of a new User
   app.post("/api/user", (req, res) => {
     console.log(req.body);
     db.user
@@ -108,6 +100,7 @@ module.exports = (app) => {
       .then((dbUser) => res.json(dbUser));
   });
 
+  // Deletion of existing user
   app.delete("/api/user/:id", (req, res) => {
     db.user
       .destroy({
@@ -118,6 +111,7 @@ module.exports = (app) => {
       .then((dbUser) => res.json(dbUser));
   });
 
+  // Update user info for example, changing email, display name, password, etc.
   app.put("/api/user", (req, res) => {
     db.user
       .update(req.body, {

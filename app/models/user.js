@@ -17,8 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         contribution: DataTypes.STRING
     },
     {
-        // Disable the modification of tablenames; By default, sequelize will automatically
-      // Transform all passed model names (first parameter of define) into plural. If not set:
+        // Disable the modification of tablenames; By default, sequelize will automatically transform all passed model names (first parameter of define) into plural.
         freezeTableName: true
     }
 );

@@ -1,21 +1,17 @@
 var articleID;
 
-// Waiting for DOM content to be loaded before running JS
+// Waiting for DOM content to be loaded before running JS.
 document.addEventListener("DOMContentLoaded", (e) => {
 
-  const articleContainer = document.getElementById("articleContainer");
   const articleTitleList = document.getElementById("articleTitleList");
   const htmlTitle = document.getElementById("htmlTitle");
   const articleContent = document.getElementById("articleContent");
-  const searchOnClick = document.getElementById("searchOnClick")
-  const itemTitle = document.getElementById("itemTitle")
 
-  //articles array is getting data from the getArticles function
+  // articles array is getting data from the getArticles() function.
   let articles = [];
 
-  //helper function to get articles
-  //the data is then added to the articles array
-  //using some sort of witchcraft
+  // Helper function to actually get articles from database.
+  // The data is then added to the articles array.
   const getArticles = () => {
     fetch("/api/articles", {
       method: "GET",
@@ -31,17 +27,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
       });
   };
 
-  let dataIDFunc = (e) => {
-    if(e.target.matches(".articleTitle")){
-      let id = parseInt(e.target.getAttribute("data-id")) - 1;
-      renderArticle(id)
-    }
-  };
-
-  //adding titles to search col
+  // Populates titles of all articles in the database to the left column of the lage.
   const searchCol = () => {
     for (let i = 0; i < articles.length; i++) {
-      // console.log(articles[i].title);
       let listItem = document.createElement("li");
       let ArticleTitle = articles[i].title;
       listItem.classList.add("articleTitle");
@@ -49,9 +37,17 @@ document.addEventListener("DOMContentLoaded", (e) => {
       listItem.innerHTML = ArticleTitle;
       articleTitleList.appendChild(listItem);
     }
-    // console.log(listItem)
+  };
+
+  // Ensures that the title the user clicked is getting loaded to the page.
+  let dataIDFunc = (e) => {
+    if(e.target.matches(".articleTitle")){
+      let id = parseInt(e.target.getAttribute("data-id")) - 1;
+      renderArticle(id)
+    }
   };
   
+  // Renders articles to page.
   const renderArticle = (id) => {
     articleID = parseInt(id);
     let title = articles[id].title
@@ -60,9 +56,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
     articleContent.innerHTML = content;
   };
 
-  //running this function allows the use of the data
-  //from the table right away in other functions
+  // Upon DOM completing its load, running this function allows the use of the data from the database right away in other functions.
   getArticles();
 
-articleTitleList.addEventListener("click", dataIDFunc)
+  // "On Click" listener function for users to start reading articles.
+  articleTitleList.addEventListener("click", dataIDFunc);
 });

@@ -27,7 +27,7 @@
   </nav>
 
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #5a6b77; height: 35px">
-    
+    <!-- Intentionally no links, purely decorative bar under the header. -->
   </nav>
 
   <div class="col-md-12">
@@ -35,7 +35,7 @@
       <div class="p-3 mb-2 text-dark">
         <div class="row">
 
-          <!-- Title List -->
+          <!-- Title List Starts -->
           <div class="col-md-3" style="background-color:rgba(18,26,31,1)">
             <div class="left">
               <h4>Menu</h4>
@@ -44,6 +44,7 @@
             </div>
           </div>
           <!-- end of title list -->
+
           <!--Main Page Content Starts -->
           <div class="col-md-6" style="background-color: #ddd; color: darkslategrey">
             <div class="right" id= "articleContainer">
@@ -56,19 +57,19 @@
           <!-- Second API Column -->
           <div class="col-md-3" style="background-color: #bbb; color: darkslategrey">
             <div class="secondapi">
-                <h3>Translator</h3>
-                <h4>Choose a Language to translate</h4>
-                <div id="google_translate_element"></div>
-  
-                <script type="text/javascript">
-                  function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
-                  }
-                </script>
-  
-                <script type="text/javascript"
-                  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-                </script>
+              <h3>Translator</h3>
+              <h4>Choose a Language to translate</h4>
+              <div id="google_translate_element"></div>
+
+              <script type="text/javascript">
+                function googleTranslateElementInit() {
+                  new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+                }
+              </script>
+
+              <script type="text/javascript"
+                src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+              </script>
             </div>
           </div>
 
@@ -76,7 +77,9 @@
 
           <!-- Blank Left Sidebar -->
           <div class="col-md-3" style="background-color:rgba(18,26,31,1)">
-            <div class="left2"></div>
+            <div class="left2">
+
+            </div>
           </div>
 
           <!-- Comment Section -->
@@ -84,9 +87,8 @@
             <h4>Comments</h4>
             <div class="col-md-12">
 
-            <!-- form starts -->
+            <!-- Comment Submission Form Starts -->
               <div>
-
                 <div class="card p-3 border-blue mt-3">
                   <span class="dots"></span>
                   <div class="d-flex justify-content-between mt-2">
@@ -113,15 +115,15 @@
                 </div>
 
               </div>
-            <!-- form ends -->
-              
+            <!-- Comment Form ends -->
+
+            <!-- Comments from other users and submission starts and populates here -->  
             <div class="comment-section" id="commentContainer">
-              <!--second comment box -->
             </div>
           </div>
         </div>
 
-          <!-- Second API Blank Column -->
+          <!-- Blank Column to the Right for design -->
           <div class="col-md-3" style="background-color: #bbb">
           </div>
 
@@ -129,6 +131,7 @@
       </div>
     </div>
   </div>
+  <!-- Scripts -->
   <script src="./js/articlesHTML.js"></script>
   <script src="./js/coms.js"></script>
 </body>

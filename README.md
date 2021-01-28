@@ -12,6 +12,7 @@
 
 - Uses Node.JS, Express, MySQL, Sequelize, and Handlebars.
 - Run `npm install` to set up packages.
+- Initiate in root directory with `node server.js` .
 - Deployment on Heroku is required to access article database.
 
 ## Deployment and Links

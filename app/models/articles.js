@@ -1,4 +1,3 @@
-// WORK ON THE DATE STUFF
 
 //Makes articles model available to other files. Also creates articles table.
 module.exports = (sequelize, DataTypes) => {
@@ -20,14 +19,10 @@ module.exports = (sequelize, DataTypes) => {
       tags: DataTypes.STRING,
     },
     {
-      // Disable the modification of tablenames; By default, sequelize will automatically
-      // Transform all passed model names (first parameter of define) into plural. If not set:
+      // Disable the modification of tablenames; By default, sequelize will automatically transform all passed model names (first parameter of define) into plural.
       freezeTableName: true,
     }
   );
-  // articles.associate = (models) => {
-  //   articles.hasMany(models.comments)
-  // }
   return articles;
 };
 
