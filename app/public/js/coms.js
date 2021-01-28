@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   // Helper function to get comments
   const getCmts = () => {
+    console.log("Getting comments in the first place");
     fetch("/api/comments", {
       method: "GET",
       headers: {
@@ -20,72 +21,54 @@ document.addEventListener("DOMContentLoaded", (e) => {
       .then((data) => {
         console.log("data from getCmts function", data);
         commentsArray = data;
-        // initCmts()
+        postComment();
       });
   };
 
   // Populates comments to the page when called
   const postComment = () => {
+    let kitties = "";
+    commentContainer.innerHTML = "";
     console.log(articleID + " Hello from Coms.js");
     console.log("Line 30 coms.js" + commentsArray.length);
-    let kitties;
-    let userIcon = "http://placekitten.com/50/50";
-    let userName = commentsArray[0].user_name;
-    let comment = commentsArray[0].comment;
-    kitties.innerHTML = `<div class="card p-3 border-blue mt-3">
-      <span class="dots"></span>
-      <div class="d-flex justify-content-between mt-2">
-        <div class="d-flex flex-row">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-2">
-                <img src="${userIcon}" style="margin-top:10px; width="55"; height="55"" class="rounded-circle">
-              </div>
-
-              <div class="col-md-10">
-                <div class="row">
-                  <div class="col-md-12">
-                    <h6 class="mb-0" style="font-weight: bold; font-size: 15; margin-left:20px">${userName}</h6>
-                  </div>
+    for (let i = 0; i < commentsArray.length; i++) {
+      if (commentsArray[i].article_id === articleID + 1) { 
+        let userIcon = "http://placekitten.com/50/50";
+        let userName = commentsArray[i].user_name;
+        let comment = commentsArray[i].comment;
+        kitties = `<div class="card p-3 border-blue mt-3">
+        <span class="dots"></span>
+        <div class="d-flex justify-content-between mt-2">
+          <div class="d-flex flex-row">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-2">
+                  <img src="${userIcon}" style="margin-top:10px; width="55"; height="55"" class="rounded-circle">
                 </div>
-                <div class="row">
-                <div class="col-md-12">
-                  <p class="content" style="margin-left:20px">
-                    ${comment}
-                  </p>
+
+                <div class="col-md-10">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h6 class="mb-0" style="font-weight: bold; font-size: 15; margin-left:20px">${userName}</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                  <div class="col-md-12">
+                    <p class="content" style="margin-left:20px">
+                      ${comment}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>`
-  ;
-    // SELECT user_icon FROM comments WHERE = ? 
-    // [article_id = req.body.countThis]
-    // for (let i = 0; i < 3, i++;) {
-
-      // Inserts the literal card HTML with escapes for unique user data
-      // .insertAdjacentHTML (        'beforeend',)
-      commentContainer.prepend(kitties);
-
-  // }
+          </div>`
+        commentContainer.insertAdjacentHTML('afterbegin', kitties);
+      };
+    };
   };
 
-  const countCmts = () => {
-    let countThis = articleID + 1;
-    fetch(`/api/comments/count=${countThis}`, {
-      method: "GET",
-      headers: {
-        "content-type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("The number of comments for article " + articleID + " is ", data);
-      });
-  };
- 
     // Posting a New Comment 
     const postNewCmt = (e) => {
       e.preventDefault();
@@ -105,6 +88,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
           .then((response) => response.json())
           .then(() => {
             commentsArray.push(comments)
+            getCmts();
             postComment();
             console.log("After witchcraft: ", commentsArray)
           })
@@ -113,7 +97,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
     getCmts();
 
-    cmtsForm.addEventListener("submit", postNewCmt);
+    cmtsForm.addEventListener("submit", (e) => {
+      e.preventDefault(),
+      postNewCmt(e),
+      getCmts(e)
+    });
 
     document.getElementById("articleTitleList")
     .addEventListener("click", () => {
@@ -121,3 +109,5 @@ document.addEventListener("DOMContentLoaded", (e) => {
     });
 
 });
+
+// module.exports = coms;
