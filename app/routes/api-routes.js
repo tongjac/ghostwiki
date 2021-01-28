@@ -1,13 +1,22 @@
 //Dependencies
 const db = require("../models");
 
-// THIS NEEDS A WAY TO ADD USERNAME ETC************
-
-//routes
+// Routes
 module.exports = (app) => {
   app.get("/api/comments", (req, res) => {
-    console.log("getting comments");
     db.comments.findAll({}).then((dbComs) => res.json(dbComs));
+  });
+
+  // I want to count how many comments are in an article.
+  app.get("/api/comments/count", (req, res) => {
+    // let articleID = req.query.count;
+    // console.log(articleID + );
+    db.comments
+    .countAndFindAll({
+      where: {
+        article_id: "2"
+      }
+    }).then((dbComs) => res.json(dbComs));
   });
 
   app.post("/api/comments", (req, res) => {
@@ -15,7 +24,8 @@ module.exports = (app) => {
     db.comments
       .create({
         comment: req.body.comment,
-        user_name: req.body.user_name
+        user_name: req.body.user_name,
+        article_id: req.body.article_id
       })
       .then((dbComs) => res.json(dbComs));
   });
