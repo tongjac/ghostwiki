@@ -1,6 +1,5 @@
 // Waiting for DOM content to be loaded before running JS
 document.addEventListener("DOMContentLoaded", (e) => {
-  console.log("DOM Loaded");
 
   const commentContainer = document.getElementById("commentContainer");
   const cmtsForm = document.getElementById("cmtsForm");
@@ -10,7 +9,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   // Helper function to get comments
   const getCmts = () => {
-    console.log("Getting comments in the first place");
     fetch("/api/comments", {
       method: "GET",
       headers: {
@@ -19,7 +17,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("data from getCmts function", data);
         commentsArray = data;
         postComment();
       });
