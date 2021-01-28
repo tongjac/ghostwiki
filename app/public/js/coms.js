@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   const postComment = () => {
     let comCard = "";
     commentContainer.innerHTML = "";
-    for (let i = 1; i < commentsArray.length; i++) {
+    for (let i = 0; i < commentsArray.length; i++) {
       if (commentsArray[i].article_id === articleID + 1) {
         let userIcon = "http://placekitten.com/50/50";
         let userName = commentsArray[i].user_name;
@@ -41,14 +41,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
                 <div class="col-md-2">
                   <img src="${userIcon}" style="margin-top:10px; width="55"; height="55"" class="rounded-circle">
                 </div>
-      
-                <div class="col-md-10">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <h6 class="mb-0" style="font-weight: bold; font-size: 15; margin-left:20px">${userName}</h6>
-                    </div>
-                  </div>
-  
                   <div class="col-md-10">
                     <div class="row">
                       <div class="col-md-12">
@@ -76,46 +68,31 @@ document.addEventListener("DOMContentLoaded", (e) => {
       };
     };
   
-      // Posting a New Comment 
-      const postNewCmt = (e) => {
-        e.preventDefault();
-        const comments = {
-        comment: document.getElementById("newCmt").value.trim(),
-        user_name: document.getElementById("userName").value,
-        article_id: articleID + 1
-        };
-        console.log(`Article ID: ${articleID}, User: ${comments.user_name}, Comment: "${comments.comment}`);
-        fetch('/api/comments', {
-                method: 'POST',
-                headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(comments),
-            })
-            .then((response) => response.json())
-            .then(() => {
-              commentsArray.push(comments)
-              getCmts();
-              postComment();
-              console.log("After witchcraft: ", commentsArray)
-            })
-  
-      };
-  
-      getCmts();
-  
-      cmtsForm.addEventListener("submit", (e) => {
-        e.preventDefault(),
-        postNewCmt(e),
-        getCmts(e)
-      });
-  
-      document.getElementById("articleTitleList")
-      .addEventListener("click", () => {
-        postComment()
-      });
+  // Posting a New Comment 
+  const postNewCmt = (e) => {
+    e.preventDefault();
+    const comments = {
+    comment: document.getElementById("newCmt").value.trim(),
+    user_name: document.getElementById("userName").value,
+    article_id: articleID + 1
+    };
+    console.log(`Article ID: ${articleID}, User: ${comments.user_name}, Comment: "${comments.comment}`);
+    fetch('/api/comments', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(comments),
+        })
+        .then((response) => response.json())
+        .then(() => {
+          commentsArray.push(comments)
+          getCmts();
+          postComment();
+        })
+    };
 
-
+    // Deleting a comment
   const deleteCmts = (e) => {
     fetch("/api/comments/:id", {
       method: "DELETE",
@@ -132,8 +109,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
   };
 
   getCmts();
+
   cmtsForm.addEventListener("submit", (e) => {
-    e.preventDefault(), postNewCmt(e), getCmts(e);
+    e.preventDefault(), 
+    postNewCmt(e), 
+    getCmts(e);
   });
 
   document.getElementById("articleTitleList").addEventListener("click", () => {

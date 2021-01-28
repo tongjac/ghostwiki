@@ -1,4 +1,4 @@
-var articleID;
+var articleID = 1;
 
 // Waiting for DOM content to be loaded before running JS.
 document.addEventListener("DOMContentLoaded", (e) => {
