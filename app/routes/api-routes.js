@@ -9,12 +9,12 @@ module.exports = (app) => {
 
   // I want to count how many comments are in an article.
   app.get("/api/comments/count", (req, res) => {
-    let articleID = req.query.count;
-    console.log(articleID);
+    // let articleID = req.query.count;
+    // console.log(articleID + );
     db.comments
-    .count({
+    .countAndFindAll({
       where: {
-        article_id: articleID,
+        article_id: "2"
       }
     }).then((dbComs) => res.json(dbComs));
   });

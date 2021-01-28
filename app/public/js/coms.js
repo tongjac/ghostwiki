@@ -8,50 +8,6 @@ console.log("DOM Loaded");
    //init comment array
   let commentsArray = [];
 
-    // Populates comments to the page when called
-    const postComment = () => {
-      console.log(articleID + " Hello from Coms.js");
-      const userIcon = "http://placekitten.com/50/50";
-      const userName = "lil_wolfmask";
-      const comment = "Text content text content text content"
-      for (let i = 0; i < 4; i++) {
-        // Inserts the literal card HTML with escapes for unique user data
-        commentContainer.insertAdjacentHTML(
-          'beforeend',
-          `<div class="card p-3 border-blue mt-3">
-          <span class="dots"></span>
-          <div class="d-flex justify-content-between mt-2">
-            <div class="d-flex flex-row">
-            
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-2">
-                    <img src="${userIcon}" style="margin-top:10px; width="55"; height="55"" class="rounded-circle">
-                  </div>
-
-                  <div class="col-md-10">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <h6 class="mb-0" style="font-weight: bold; font-size: 15; margin-left:20px">${userName}</h6>
-                      </div>
-                    </div>
-                    <div class="row">
-                    <div class="col-md-12">
-                      <p class="content" style="margin-left:20px">
-                        ${comment}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>`
-      );
-    }
-  };
-
   // Helper function to get comments
   const getCmts = () => {
     fetch("/api/comments", {
@@ -66,6 +22,54 @@ console.log("DOM Loaded");
         commentsArray = data;
         // initCmts()
       });
+  };
+
+  // Populates comments to the page when called
+  const postComment = () => {
+    console.log(articleID + " Hello from Coms.js");
+    console.log("Line 30 coms.js" + commentsArray.length);
+    let kitties = "";
+    let userIcon = "http://placekitten.com/50/50";
+    let userName = commentsArray[0].user_name;
+    let comment = commentsArray[0].comment;
+    kitties.innerHTML = `<div class="card p-3 border-blue mt-3">
+      <span class="dots"></span>
+      <div class="d-flex justify-content-between mt-2">
+        <div class="d-flex flex-row">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-2">
+                <img src="${userIcon}" style="margin-top:10px; width="55"; height="55"" class="rounded-circle">
+              </div>
+
+              <div class="col-md-10">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h6 class="mb-0" style="font-weight: bold; font-size: 15; margin-left:20px">${userName}</h6>
+                  </div>
+                </div>
+                <div class="row">
+                <div class="col-md-12">
+                  <p class="content" style="margin-left:20px">
+                    ${comment}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`
+  ;
+    // SELECT user_icon FROM comments WHERE = ? 
+    // [article_id = req.body.countThis]
+    // for (let i = 0; i < 3, i++;) {
+
+      // Inserts the literal card HTML with escapes for unique user data
+      // .insertAdjacentHTML (        'beforeend',)
+      commentContainer.prepend(kitties);
+
+  // }
   };
 
   const countCmts = () => {
@@ -101,16 +105,19 @@ console.log("DOM Loaded");
           .then((response) => response.json())
           .then(() => {
             commentsArray.push(comments)
+            postComment();
             console.log("After witchcraft: ", commentsArray)
           })
+
     };
 
     getCmts();
+
     cmtsForm.addEventListener("submit", postNewCmt);
+
     document.getElementById("articleTitleList")
     .addEventListener("click", () => {
-      postComment(),
-      countCmts()
+      postComment()
     });
 
 });
