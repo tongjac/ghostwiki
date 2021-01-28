@@ -58,6 +58,9 @@ console.log("DOM Loaded");
                       ${comment}
                     </p>
                   </div>
+                  <div class="mt-2 d-flex justify-content-end">
+                    <button type="button" class="btn btn-danger">Delete</button>
+                  </div>
                 </div>
               </div>
             </div>
