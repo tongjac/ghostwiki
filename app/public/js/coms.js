@@ -51,11 +51,19 @@ document.addEventListener("DOMContentLoaded", (e) => {
                       <h6 class="mb-0" style="font-weight: bold; font-size: 15; margin-left:20px">${userName}</h6>
                     </div>
                   </div>
-                  <div class="row">
+  
                   <div class="col-md-10">
-                    <p class="content" style="margin-left:20px">
-                      ${comment}
-                    </p>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <h6 class="mb-0" style="font-weight: bold; font-size: 15; margin-left:20px">${userName}</h6>
+                      </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-12">
+                      <p class="content" style="margin-left:20px">
+                        ${comment}
+                      </p>
+                    </div>
                   </div>
                 </div>
                   <div class="col-md-2" style="float:right">
@@ -64,40 +72,52 @@ document.addEventListener("DOMContentLoaded", (e) => {
                 </div>
               </div>
             </div>
-          
-        </div>
-      </div>`;
-        commentContainer.insertAdjacentHTML("afterbegin", comCard);
-      }
-    }
-  };
-
-  // Posting a New Comment
-  const postNewCmt = (e) => {
-    e.preventDefault();
-    const comments = {
-      comment: document.getElementById("newCmt").value.trim(),
-      user_name: document.getElementById("userName").value,
-      article_id: articleID + 1,
+          </div>
+            </div>`
+          commentContainer.insertAdjacentHTML('afterbegin', kitties);
+        };
+      };
     };
-    console.log(
-      `Article ID: ${articleID}, User: ${comments.user_name}, Comment: "${comments.comment}`
-    );
-    fetch("/api/comments", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(comments),
-    })
-      .then((response) => response.json())
-      .then(() => {
-        commentsArray.push(comments);
-        getCmts();
-        postComment();
-        console.log("After witchcraft: ", commentsArray);
+  
+      // Posting a New Comment 
+      const postNewCmt = (e) => {
+        e.preventDefault();
+        const comments = {
+        comment: document.getElementById("newCmt").value.trim(),
+        user_name: document.getElementById("userName").value,
+        article_id: articleID + 1
+        };
+        console.log(`Article ID: ${articleID}, User: ${comments.user_name}, Comment: "${comments.comment}`);
+        fetch('/api/comments', {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(comments),
+            })
+            .then((response) => response.json())
+            .then(() => {
+              commentsArray.push(comments)
+              getCmts();
+              postComment();
+              console.log("After witchcraft: ", commentsArray)
+            })
+  
+      };
+  
+      getCmts();
+  
+      cmtsForm.addEventListener("submit", (e) => {
+        e.preventDefault(),
+        postNewCmt(e),
+        getCmts(e)
       });
-  };
+  
+      document.getElementById("articleTitleList")
+      .addEventListener("click", () => {
+        postComment()
+      });
+
 
   const deleteCmts = (e) => {
     fetch("/api/comments/:id", {
