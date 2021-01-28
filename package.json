@@ -1,5 +1,5 @@
 {
-  "name": "Project2_CRUD",
+  "name": "ghostwiki",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/edgarpena74/Project2_CRUD.git"
+    "url": "git+https://github.com/tongjac/ghostwiki.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/edgarpena74/Project2_CRUD/issues"
+    "url": "https://github.com/tongjac/ghostwiki/issues"
   },
-  "homepage": "https://github.com/edgarpena74/Project2_CRUD#readme",
+  "homepage": "https://github.com/tongjac/ghostwiki/#readme",
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
