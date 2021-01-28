@@ -5,9 +5,8 @@
     "database": "uncdmap5d3bxrtsn",
     "host": "lfmerukkeiac5y5w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql",
-    "define":{"timestamps": false}
+    "define": {"timestamps": false}
   },
-
   "test": {
     "username": "root",
     "password": "abc123",

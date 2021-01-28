@@ -18,7 +18,9 @@
 
 Main github: https://github.com/tongjac/ghostwiki
 
-Live Deployment: ---
+Live Deployment: https://ghostwiki.herokuapp.com/
+
+Presentation: https://docs.google.com/presentation/d/1_Gg5UHAGk3hzvO-0HvqJq539pnSL8KAwDwmSUqelvOs/
 
 ## Contributors:
 
