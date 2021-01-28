@@ -4,7 +4,8 @@ const db = require("../models");
 // Routes
 module.exports = (app) => {
   app.get("/api/comments", (req, res) => {
-    db.comments.findAll({}).then((dbComs) => res.json(dbComs));
+    db.comments.findAll({}).then((dbComs) => res.json(dbComs))
+    .catch((err) => res.json(err));
   });
 
   // Posts user comment to database
@@ -16,7 +17,8 @@ module.exports = (app) => {
         user_name: req.body.user_name,
         article_id: req.body.article_id
       })
-      .then((dbComs) => res.json(dbComs));
+      .then((dbComs) => res.json(dbComs))
+      .catch((err) => res.json(err));
   });
 
   // Deletes Comments with the passed id
@@ -27,7 +29,8 @@ module.exports = (app) => {
           id: req.params.id,
         },
       })
-      .then((dbComs) => res.json(dbComs));
+      .then((dbComs) => res.json(dbComs))
+      .catch((err) => res.json(err));;
   });
 
   // Update function for existing comments (unused)
@@ -38,13 +41,15 @@ module.exports = (app) => {
           comment: req.body.comment,
         },
       })
-      .then((dbComs) => res.json(dbComs));
+      .then((dbComs) => res.json(dbComs))
+      .catch((err) => res.json(err));
   });
 
   // Populates an array with all article data
   app.get("/api/articles", (req, res) => {
     console.log("getting articles");
-    db.articles.findAll({}).then((dbArticles) => res.json(dbArticles));
+    db.articles.findAll({}).then((dbArticles) => res.json(dbArticles))
+    .catch((err) => res.json(err));
   });
 
   // Posts articles
@@ -55,7 +60,8 @@ module.exports = (app) => {
         content: req.body.content,
         tags: req.body.tags,
       })
-      .then((dbArticles) => res.json(dbArticles));
+      .then((dbArticles) => res.json(dbArticles))
+      .catch((err) => res.json(err));
   });
 
   // Deletes articles with the passed id
@@ -66,7 +72,8 @@ module.exports = (app) => {
           id: req.params.id,
         },
       })
-      .then((dbArticles) => res.json(dbArticles));
+      .then((dbArticles) => res.json(dbArticles))
+      .catch((err) => res.json(err));
   });
 
   // Unused update method for updating existing articles
@@ -77,13 +84,15 @@ module.exports = (app) => {
           id: req.body.id,
         },
       })
-      .then((dbArticles) => res.json(dbArticles));
+      .then((dbArticles) => res.json(dbArticles))
+      .catch((err) => res.json(err));
   });
 
   // Obtains user data on get
   app.get("/api/user", (req, res) => {
     console.log("getting user");
-    db.user.findAll({}).then((dbUser) => res.json(dbUser));
+    db.user.findAll({}).then((dbUser) => res.json(dbUser))
+    .catch((err) => res.json(err));
   });
 
   // Creation of a new User
@@ -97,7 +106,8 @@ module.exports = (app) => {
         password: req.body.password,
         contribution: req.body.contribution,
       })
-      .then((dbUser) => res.json(dbUser));
+      .then((dbUser) => res.json(dbUser))
+      .catch((err) => res.json(err));
   });
 
   // Deletion of existing user
@@ -108,7 +118,8 @@ module.exports = (app) => {
           id: req.params.id,
         },
       })
-      .then((dbUser) => res.json(dbUser));
+      .then((dbUser) => res.json(dbUser))
+      .catch((err) => res.json(err));
   });
 
   // Update user info for example, changing email, display name, password, etc.
@@ -119,6 +130,7 @@ module.exports = (app) => {
           id: req.body.id
         },
       })
-      .then((dbUser) => res.json(dbUser));
+      .then((dbUser) => res.json(dbUser))
+      .catch((err) => res.json(err));
   });
 };

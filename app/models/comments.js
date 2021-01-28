@@ -9,14 +9,6 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true,
         primaryKey: true,
       },
-      created_at: {
-        field: "created_at",
-        type: DataTypes.DATE,
-      },
-      updated_at: {
-        field: "updated_at",
-        type: DataTypes.DATE,
-      },
       user_name: {
         type: DataTypes.STRING
       },
@@ -30,7 +22,6 @@ module.exports = (sequelize, DataTypes) => {
     {
       // Disable the modification of tablenames; By default, sequelize will automatically transform all passed model names (first parameter of define) into plural.
       freezeTableName: true,
-
     }
   );
   
