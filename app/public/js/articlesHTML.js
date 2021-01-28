@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
       });
   };
 
-  let testFunc = (e) => {
+  let dataIDFunc = (e) => {
     if(e.target.matches(".articleTitle")){
       let id = parseInt(e.target.getAttribute("data-id")) - 1;
       renderArticle(id)
@@ -64,5 +64,5 @@ document.addEventListener("DOMContentLoaded", (e) => {
   //from the table right away in other functions
   getArticles();
 
-articleTitleList.addEventListener("click", testFunc)
+articleTitleList.addEventListener("click", dataIDFunc)
 });

@@ -85,7 +85,6 @@ body {
   float: left;
   flex: 30%;
   padding: 15px;
-
 }
 
 /* .secondapi2 {
@@ -174,4 +173,8 @@ body {
 .content {
   font-size: 14px;
   padding-top: 8px;
+}
+
+li {
+  list-style: none !important;
 }

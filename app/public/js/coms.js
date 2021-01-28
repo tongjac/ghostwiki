@@ -95,6 +95,23 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
     };
 
+    const deleteCmts = (id) => {
+      let comID = user.value
+      console.log("Getting comments in the first place");
+      fetch("/api/comments/:id", {
+        method: "DELETE",
+        headers: {
+          "content-type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("data from getCmts function", data);
+          commentsArray = data;
+          postComment();
+        });
+    };
+
     getCmts();
 
     cmtsForm.addEventListener("submit", (e) => {
