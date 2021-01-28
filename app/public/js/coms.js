@@ -1,113 +1,114 @@
 // Waiting for DOM content to be loaded before running JS
 document.addEventListener("DOMContentLoaded", (e) => {
-console.log("DOM Loaded");
-
-  const commentContainer = document.getElementById("commentContainer");
-  const cmtsForm = document.getElementById("cmtsForm");
-
-   //init comment array
-  let commentsArray = [];
-
-  // Helper function to get comments
-  const getCmts = () => {
-    console.log("Getting comments in the first place");
-    fetch("/api/comments", {
-      method: "GET",
-      headers: {
-        "content-type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("data from getCmts function", data);
-        commentsArray = data;
-        postComment();
-      });
-  };
-
-  // Populates comments to the page when called
-  const postComment = () => {
-    let kitties = "";
-    commentContainer.innerHTML = "";
-    console.log(articleID + " Hello from Coms.js");
-    console.log("Line 30 coms.js" + commentsArray.length);
-    for (let i = 0; i < commentsArray.length; i++) {
-      if (commentsArray[i].article_id === articleID + 1) { 
-        let userIcon = "http://placekitten.com/50/50";
-        let userName = commentsArray[i].user_name;
-        let comment = commentsArray[i].comment;
-        kitties = `<div class="card p-3 border-blue mt-3">
-        <span class="dots"></span>
-        <div class="d-flex justify-content-between mt-2">
-          <div class="d-flex flex-row">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-2">
-                  <img src="${userIcon}" style="margin-top:10px; width="55"; height="55"" class="rounded-circle">
-                </div>
-
-                <div class="col-md-10">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <h6 class="mb-0" style="font-weight: bold; font-size: 15; margin-left:20px">${userName}</h6>
-                    </div>
+  console.log("DOM Loaded");
+  
+    const commentContainer = document.getElementById("commentContainer");
+    const cmtsForm = document.getElementById("cmtsForm");
+  
+     //init comment array
+    let commentsArray = [];
+  
+    // Helper function to get comments
+    const getCmts = () => {
+      console.log("Getting comments in the first place");
+      fetch("/api/comments", {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("data from getCmts function", data);
+          commentsArray = data;
+          postComment();
+        });
+    };
+  
+    // Populates comments to the page when called
+    const postComment = () => {
+      let kitties = "";
+      commentContainer.innerHTML = "";
+      console.log(articleID + " Hello from Coms.js");
+      console.log("Line 30 coms.js" + commentsArray.length);
+      for (let i = 0; i < commentsArray.length; i++) {
+        if (commentsArray[i].article_id === articleID + 1) { 
+          let userIcon = "http://placekitten.com/50/50";
+          let userName = commentsArray[i].user_name;
+          let comment = commentsArray[i].comment;
+          kitties = `<div class="card p-3 border-blue mt-3">
+          <span class="dots"></span>
+          <div class="d-flex justify-content-between mt-2">
+            <div class="d-flex flex-row">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-2">
+                    <img src="${userIcon}" style="margin-top:10px; width="55"; height="55"" class="rounded-circle">
                   </div>
-                  <div class="row">
-                  <div class="col-md-12">
-                    <p class="content" style="margin-left:20px">
-                      ${comment}
-                    </p>
+  
+                  <div class="col-md-10">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <h6 class="mb-0" style="font-weight: bold; font-size: 15; margin-left:20px">${userName}</h6>
+                      </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-12">
+                      <p class="content" style="margin-left:20px">
+                        ${comment}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-          </div>`
-        commentContainer.insertAdjacentHTML('afterbegin', kitties);
+            </div>`
+          commentContainer.insertAdjacentHTML('afterbegin', kitties);
+        };
       };
     };
-  };
-
-    // Posting a New Comment 
-    const postNewCmt = (e) => {
-      e.preventDefault();
-      const comments = {
-      comment: document.getElementById("newCmt").value.trim(),
-      user_name: document.getElementById("userName").value,
-      article_id: articleID + 1
+  
+      // Posting a New Comment 
+      const postNewCmt = (e) => {
+        e.preventDefault();
+        const comments = {
+        comment: document.getElementById("newCmt").value.trim(),
+        user_name: document.getElementById("userName").value,
+        article_id: articleID + 1
+        };
+        console.log(`Article ID: ${articleID}, User: ${comments.user_name}, Comment: "${comments.comment}`);
+        fetch('/api/comments', {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(comments),
+            })
+            .then((response) => response.json())
+            .then(() => {
+              commentsArray.push(comments)
+              getCmts();
+              postComment();
+              console.log("After witchcraft: ", commentsArray)
+            })
+  
       };
-      console.log(`Article ID: ${articleID}, User: ${comments.user_name}, Comment: "${comments.comment}`);
-      fetch('/api/comments', {
-              method: 'POST',
-              headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(comments),
-          })
-          .then((response) => response.json())
-          .then(() => {
-            commentsArray.push(comments)
-            getCmts();
-            postComment();
-            console.log("After witchcraft: ", commentsArray)
-          })
-
-    };
-
-    getCmts();
-
-    cmtsForm.addEventListener("submit", (e) => {
-      e.preventDefault(),
-      postNewCmt(e),
-      getCmts(e)
-    });
-
-    document.getElementById("articleTitleList")
-    .addEventListener("click", () => {
-      postComment()
-    });
-
-});
-
-// module.exports = coms;
+  
+      getCmts();
+  
+      cmtsForm.addEventListener("submit", (e) => {
+        e.preventDefault(),
+        postNewCmt(e),
+        getCmts(e)
+      });
+  
+      document.getElementById("articleTitleList")
+      .addEventListener("click", () => {
+        postComment()
+      });
+  
+  });
+  
+  // module.exports = coms;
+  
