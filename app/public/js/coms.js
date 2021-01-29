@@ -76,7 +76,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
     user_name: document.getElementById("userName").value,
     article_id: articleID + 1
     };
-    console.log(`Article ID: ${articleID}, User: ${comments.user_name}, Comment: "${comments.comment}`);
     fetch('/api/comments', {
             method: 'POST',
             headers: {
@@ -102,7 +101,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
     })
       .then((response) => response.json())
         .then((data) => {
-          console.log(e, data);
         commentsArray = data;
         postComment();
       });

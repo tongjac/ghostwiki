@@ -17,7 +17,8 @@ module.exports = (app) => {
         user_name: req.body.user_name,
         article_id: req.body.article_id
       })
-      .then((dbComs) => res.json(dbComs));
+      .then((dbComs) => res.json(dbComs))
+      .catch((err) => res.json(err));
   });
 
   // Deletes Comments with the passed id
