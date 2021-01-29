@@ -35,12 +35,17 @@ document.addEventListener("DOMContentLoaded", (e) => {
         comCard = `<div class="card p-3 border-blue mt-3">
         <span class="dots"></span>
         <div class="d-flex justify-content-between mt-2">
-          
             <div class="container">
               <div class="row">
                 <div class="col-md-2">
                   <img src="${userIcon}" style="margin-top:10px; width="55"; height="55"" class="rounded-circle">
                 </div>
+                <div class="col-md-10">
+                  <div class="row">
+                    <div class="col-md-12">
+                      
+                    </div>
+                  </div>
                   <div class="col-md-10">
                     <div class="row">
                       <div class="col-md-12">
